@@ -124,14 +124,48 @@
     }
   ];
 
+  var isEnglish = document.documentElement.lang.toLowerCase().indexOf('en') === 0;
+  var englishAnswers = [
+    { id: 'natural', label: 'Are the emeralds natural?', keywords: ['natural', 'genuine', 'real', 'authentic'], answer: 'Yes. Ouest Gems Export presents a selection of natural emeralds chosen directly at the source.' },
+    { id: 'origin', label: 'Where do the emeralds come from?', keywords: ['origin', 'pakistan', 'swat', 'mine', 'provenance', 'come from'], answer: 'The stones presented come from Pakistan, particularly the Swat Valley. The available origin information is shown on each stone’s page.' },
+    { id: 'certificate', label: 'Are the emeralds certified?', keywords: ['certificate', 'certified', 'certification', 'laboratory', 'report', 'guild', 'gia', 'ssef', 'gemtrue'], answer: 'Each stone’s page states the gemological laboratory and report reference available for that emerald. You may request the complete documentation before making a decision.' },
+    { id: 'price', label: 'How can I obtain the price?', keywords: ['price', 'cost', 'budget', 'how much', 'quote'], answer: 'Prices are provided on request so that we can send you the complete information specific to the stone at the same time.' },
+    { id: 'details', label: 'Can I receive more photos and videos?', keywords: ['photo', 'video', 'documentation', 'dimension', 'weight', 'carat', 'information'], answer: 'Yes. We can provide additional photographs, videos and all available gemological information for each stone.' },
+    { id: 'treatment', label: 'Has the emerald been treated?', keywords: ['treatment', 'treated', 'oil', 'oiling', 'resin'], answer: 'Any treatment depends on the individual stone and must be checked on its certificate. Send us the reference concerned to receive the exact information.' },
+    { id: 'shipping-area', label: 'Do you ship worldwide?', keywords: ['shipping', 'ship', 'delivery', 'country', 'worldwide', 'international', 'abroad'], answer: 'Yes. Ouest Gems Export ships stones worldwide from France within 48 hours. Shipments are insured.' },
+    { id: 'shipping-time', label: 'What is the dispatch time?', keywords: ['dispatch time', 'delivery time', '48 hours', 'when', 'how quickly'], answer: 'Stones are dispatched from France within 48 hours.' },
+    { id: 'insured', label: 'Are shipments insured?', keywords: ['insured', 'insurance', 'secure shipment'], answer: 'Yes. Shipments are insured.' },
+    { id: 'payment', label: 'How can I pay?', keywords: ['payment', 'pay', 'bank transfer', 'credit card', 'paypal'], answer: 'Payment is made by bank transfer.' },
+    { id: 'reservation', label: 'Can I reserve a stone?', keywords: ['reserve', 'reservation', 'hold', '12 hours'], answer: 'Yes. A stone can be reserved for 12 hours.' },
+    { id: 'original-certificate', label: 'Is the original certificate included?', keywords: ['original certificate', 'certificate included', 'provided with'], answer: 'Yes. The available original certificate is provided with the stone.' },
+    { id: 'jewelry', label: 'Do you also sell jewellery?', keywords: ['jewellery', 'jewelry', 'ring', 'necklace', 'setting', 'mounting'], answer: 'Ouest Gems Export offers loose stones only and does not create jewellery.' },
+    { id: 'professionals', label: 'Do you work with professionals?', keywords: ['professional', 'jeweller', 'jeweler', 'partnership', 'retailer', 'b2b'], answer: 'Yes. Partnerships with professionals are available on request.' },
+    { id: 'sourcing', label: 'Can you source a specific stone?', keywords: ['specific stone', 'personal search', 'bespoke', 'criteria', 'specific colour', 'specific color', 'source'], answer: 'Yes. A personalised search based on your criteria is available on request.' }
+  ];
+  if (isEnglish) answers = englishAnswers;
+
+  var copy = isEnglish ? {
+    toggle: 'Any questions?', instant: 'Instant answers', close: 'Close', choose: 'Choose a question',
+    frequent: 'Frequently asked questions', question: 'Your question', placeholder: 'Type your question…',
+    send: 'Send', note: 'Automated assistant · For a personalised answer, contact our team.',
+    greeting: 'Hello, I am the Ouest Gems Export assistant. How may I help you?',
+    fallback: 'I do not yet have a validated answer to that question. <a href="{link}">Contact us directly</a> and our team will reply personally.'
+  } : {
+    toggle: 'Une question ?', instant: 'Réponses instantanées', close: 'Fermer', choose: 'Choisissez une question',
+    frequent: 'Questions fréquentes', question: 'Votre question', placeholder: 'Écrivez votre question…',
+    send: 'Envoyer', note: 'Assistant automatique · Pour une réponse personnalisée, contactez notre équipe.',
+    greeting: 'Bonjour, je suis l’assistant Ouest Gems Export. Comment puis-je vous renseigner ?',
+    fallback: 'Je n’ai pas encore une réponse validée à cette question. <a href="{link}">Écrivez-nous directement</a> : nous vous répondrons personnellement.'
+  };
+
   function normalize(value) {
     return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
   function contactLink() {
     var match = window.location.pathname.match(/oge-\d{3}/i);
-    var reference = match ? ' concernant ' + match[0].toUpperCase() : '';
-    var subject = encodeURIComponent('Demande d’information Ouest Gems Export' + reference);
+    var reference = match ? (isEnglish ? ' about ' : ' concernant ') + match[0].toUpperCase() : '';
+    var subject = encodeURIComponent((isEnglish ? 'Information request — Ouest Gems Export' : 'Demande d’information Ouest Gems Export') + reference);
     return 'mailto:ouestgems.export@gmail.com?subject=' + subject;
   }
 
@@ -141,15 +175,15 @@
   shell.innerHTML = [
     '<button class="oge-assistant-toggle" type="button" aria-expanded="false" aria-controls="oge-assistant-panel">',
     '<span class="oge-assistant-status" aria-hidden="true"></span>',
-    '<span>Une question ?</span>',
+    '<span>' + copy.toggle + '</span>',
     '</button>',
     '<section class="oge-assistant-panel" id="oge-assistant-panel" hidden>',
-    '<header><div><strong>Assistant Ouest Gems</strong><small>Réponses instantanées</small></div><button type="button" class="oge-assistant-close" aria-label="Fermer">×</button></header>',
+    '<header><div><strong>Ouest Gems Assistant</strong><small>' + copy.instant + '</small></div><button type="button" class="oge-assistant-close" aria-label="' + copy.close + '">×</button></header>',
     '<div class="oge-assistant-messages" aria-live="polite"></div>',
-    '<p class="oge-assistant-quick-title">Choisissez une question</p>',
-    '<div class="oge-assistant-quick" aria-label="Questions fréquentes"></div>',
-    '<form class="oge-assistant-form"><label class="sr-only" for="oge-assistant-input">Votre question</label><input id="oge-assistant-input" type="text" autocomplete="off" placeholder="Écrivez votre question…"><button type="submit">Envoyer</button></form>',
-    '<p class="oge-assistant-note">Assistant automatique · Pour une réponse personnalisée, contactez notre équipe.</p>',
+    '<p class="oge-assistant-quick-title">' + copy.choose + '</p>',
+    '<div class="oge-assistant-quick" aria-label="' + copy.frequent + '"></div>',
+    '<form class="oge-assistant-form"><label class="sr-only" for="oge-assistant-input">' + copy.question + '</label><input id="oge-assistant-input" type="text" autocomplete="off" placeholder="' + copy.placeholder + '"><button type="submit">' + copy.send + '</button></form>',
+    '<p class="oge-assistant-note">' + copy.note + '</p>',
     '</section>'
   ].join('');
   document.body.appendChild(shell);
@@ -175,7 +209,7 @@
     panel.hidden = false;
     toggle.setAttribute('aria-expanded', 'true');
     if (!messages.children.length) {
-      addMessage('Bonjour, je suis l’assistant Ouest Gems Export. Comment puis-je vous renseigner ?', 'bot');
+      addMessage(copy.greeting, 'bot');
     }
   }
 
@@ -213,7 +247,7 @@
       if (found) {
         addMessage(found.answer, 'bot');
       } else {
-        addMessage('Je n’ai pas encore une réponse validée à cette question. <a href="' + contactLink() + '">Écrivez-nous directement</a> : nous vous répondrons personnellement.', 'bot', true);
+        addMessage(copy.fallback.replace('{link}', contactLink()), 'bot', true);
       }
     }, 220);
   });
