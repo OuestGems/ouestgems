@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ouestgems.com/sitemap.xml

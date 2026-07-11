@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://www.ouest-gems-export.com/sitemap.xml
