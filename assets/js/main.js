@@ -146,6 +146,7 @@
     '<section class="oge-assistant-panel" id="oge-assistant-panel" hidden>',
     '<header><div><strong>Assistant Ouest Gems</strong><small>Réponses instantanées</small></div><button type="button" class="oge-assistant-close" aria-label="Fermer">×</button></header>',
     '<div class="oge-assistant-messages" aria-live="polite"></div>',
+    '<p class="oge-assistant-quick-title">Choisissez une question</p>',
     '<div class="oge-assistant-quick" aria-label="Questions fréquentes"></div>',
     '<form class="oge-assistant-form"><label class="sr-only" for="oge-assistant-input">Votre question</label><input id="oge-assistant-input" type="text" autocomplete="off" placeholder="Écrivez votre question…"><button type="submit">Envoyer</button></form>',
     '<p class="oge-assistant-note">Assistant automatique · Pour une réponse personnalisée, contactez notre équipe.</p>',
@@ -188,8 +189,7 @@
     window.setTimeout(function () { addMessage(entry.answer, 'bot'); }, 180);
   }
 
-  ['natural', 'origin', 'certificate', 'price', 'shipping-area', 'reservation'].forEach(function (id) {
-    var entry = answers.find(function (item) { return item.id === id; });
+  answers.forEach(function (entry) {
     var button = document.createElement('button');
     button.type = 'button';
     button.textContent = entry.label;
