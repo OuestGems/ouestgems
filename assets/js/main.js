@@ -67,6 +67,60 @@
       label: 'Quel est le traitement ?',
       keywords: ['traitement', 'huile', 'huilage', 'resine', 'résine'],
       answer: 'Le traitement éventuel dépend de chaque pierre et doit être vérifié sur son certificat. Demandez-nous la référence concernée pour obtenir l’information exacte.'
+    },
+    {
+      id: 'shipping-area',
+      label: 'Livrez-vous dans le monde entier ?',
+      keywords: ['livraison', 'livrez', 'expedition', 'expédiez', 'pays', 'monde', 'international', 'etranger', 'étranger'],
+      answer: 'Oui. Ouest Gems Export expédie ses pierres partout dans le monde depuis la France, sous 48 heures. Les envois sont assurés.'
+    },
+    {
+      id: 'shipping-time',
+      label: 'Quel est le délai d’expédition ?',
+      keywords: ['delai', 'délai', '48h', '48 h', 'quand', 'rapidement'],
+      answer: 'Les pierres sont expédiées depuis la France sous 48 heures.'
+    },
+    {
+      id: 'insured',
+      label: 'Les envois sont-ils assurés ?',
+      keywords: ['assure', 'assuré', 'assurance', 'securise', 'sécurisé'],
+      answer: 'Oui. Les envois sont assurés.'
+    },
+    {
+      id: 'payment',
+      label: 'Comment puis-je payer ?',
+      keywords: ['paiement', 'payer', 'reglement', 'règlement', 'virement', 'carte bancaire', 'paypal'],
+      answer: 'Le règlement s’effectue par virement bancaire.'
+    },
+    {
+      id: 'reservation',
+      label: 'Puis-je réserver une pierre ?',
+      keywords: ['reserver', 'réserver', 'reservation', 'réservation', 'bloquer', '12h', '12 h'],
+      answer: 'Oui. Une pierre peut être réservée pendant 12 heures.'
+    },
+    {
+      id: 'original-certificate',
+      label: 'Le certificat original est-il fourni ?',
+      keywords: ['certificat original', 'original du certificat', 'livre avec', 'livré avec'],
+      answer: 'Oui. Le certificat original disponible est fourni avec la pierre.'
+    },
+    {
+      id: 'jewelry',
+      label: 'Proposez-vous aussi des bijoux ?',
+      keywords: ['bijou', 'bijoux', 'bague', 'collier', 'joaillerie', 'monture', 'sertissage'],
+      answer: 'Ouest Gems Export propose uniquement des pierres, sans création de bijoux.'
+    },
+    {
+      id: 'professionals',
+      label: 'Travaillez-vous avec des professionnels ?',
+      keywords: ['professionnel', 'bijoutier', 'joaillier', 'partenariat', 'revendeur', 'b2b'],
+      answer: 'Oui. Des partenariats avec des professionnels sont possibles sur simple demande.'
+    },
+    {
+      id: 'sourcing',
+      label: 'Pouvez-vous rechercher une pierre ?',
+      keywords: ['recherche personnalisee', 'recherche personnalisée', 'sur mesure', 'critere', 'critère', 'couleur precise', 'couleur précise'],
+      answer: 'Oui. Une recherche personnalisée selon vos critères est possible sur simple demande.'
     }
   ];
 
@@ -134,7 +188,8 @@
     window.setTimeout(function () { addMessage(entry.answer, 'bot'); }, 180);
   }
 
-  answers.slice(0, 5).forEach(function (entry) {
+  ['natural', 'origin', 'certificate', 'price', 'shipping-area', 'reservation'].forEach(function (id) {
+    var entry = answers.find(function (item) { return item.id === id; });
     var button = document.createElement('button');
     button.type = 'button';
     button.textContent = entry.label;
