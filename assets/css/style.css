@@ -36,6 +36,7 @@
 .product-sticky{position:sticky;top:115px}
 .back-link{display:inline-block;margin-bottom:28px;text-decoration:none;color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
 .catalogue-intro{padding-top:160px;padding-bottom:55px}
+.collection-home-link{margin-bottom:24px}
 @media(max-width:900px){.catalogue-grid,.product-main,.product-gallery-grid{grid-template-columns:1fr}.product-sticky{position:static}}
 
 /* Assistant conversationnel */
