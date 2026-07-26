@@ -86,3 +86,79 @@
 @media(max-width:900px){.seo-grid,.guide-links{grid-template-columns:1fr}}
 .oge-assistant-note{margin:0;padding:0 15px 14px;color:rgba(241,235,223,.38);font-size:9px;line-height:1.4}
 @media(max-width:600px){.oge-assistant{right:12px;bottom:12px}.oge-assistant-panel{right:0;bottom:55px}.oge-assistant-toggle{padding:12px 14px}}
+
+/* Luxury editorial refresh */
+.hero{position:relative;isolation:isolate}
+.hero:after{content:"";position:absolute;inset:auto 8% 0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.65}
+.hero h1{max-width:100%;text-wrap:balance}
+.hero h1 em{color:#d9bd6c;text-shadow:0 3px 28px rgba(0,0,0,.58)}
+.trust div{position:relative}
+.trust div:before{content:"";display:inline-block;width:5px;height:5px;margin:0 10px 1px 0;border:1px solid var(--gold);transform:rotate(45deg)}
+
+.seo-section{position:relative;overflow:hidden;background:
+radial-gradient(circle at 13% 12%,rgba(23,71,44,.34),transparent 30%),
+linear-gradient(180deg,#0c0c0c,#090a09)}
+.seo-section:before{content:"";position:absolute;width:520px;height:520px;right:-260px;top:-250px;border:1px solid rgba(201,168,76,.14);border-radius:50%;box-shadow:0 0 0 70px rgba(201,168,76,.025)}
+.seo-grid{gap:1px;background:rgba(201,168,76,.35);box-shadow:0 28px 75px rgba(0,0,0,.34)}
+.seo-card{position:relative;min-height:330px;padding:42px 36px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background-position:center;background-size:cover}
+.seo-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,8,5,.12),rgba(4,7,5,.62) 46%,rgba(5,7,6,.97));transition:.45s}
+.seo-card:nth-child(1){background-image:url('../img/emeraude-pakistan-pinces.jpg')}
+.seo-card:nth-child(2){background-image:url('../img/oge-004-1.jpg')}
+.seo-card:nth-child(3){background-image:url('../img/terrain-examen.jpg')}
+.seo-card>*{position:relative;z-index:1}
+.seo-card:hover{background-color:#151515;transform:translateY(-4px);background-size:108%}
+.seo-card:hover:before{background:linear-gradient(180deg,rgba(10,38,24,.08),rgba(4,13,8,.60) 44%,rgba(5,7,6,.96))}
+.seo-card h3{font-size:34px;line-height:1.05;text-wrap:balance}
+.seo-card p{color:rgba(241,235,223,.74);max-width:31ch}
+.seo-card span{display:flex;align-items:center;gap:10px}
+.seo-card span:before{content:"";width:28px;height:1px;background:var(--gold)}
+
+.faq-grid details{transition:.25s;border-left:2px solid transparent}
+.faq-grid details[open]{background:linear-gradient(90deg,rgba(23,71,44,.35),#111 42%);border-left-color:var(--gold)}
+.faq-grid summary::marker{color:var(--gold)}
+
+.guide-page{--guide-image:url('../img/emeraude-pakistan-pinces.jpg');background:#080908}
+.guide-swat{--guide-image:url('../img/emeraude-pakistan-pinces.jpg')}
+.guide-buy{--guide-image:url('../img/oge-004-1.jpg')}
+.guide-auth{--guide-image:url('../img/terrain-examen.jpg')}
+.guide-care{--guide-image:url('../img/emeraude-183-2.jpg')}
+.guide-page main>section{position:relative;padding-top:190px;background:
+linear-gradient(180deg,rgba(3,10,6,.34),rgba(8,9,8,.78) 390px,#080908 720px),
+var(--guide-image) center top/100% auto no-repeat}
+.guide-page main>section:before{content:"";position:absolute;top:0;left:0;width:100%;height:600px;background:linear-gradient(90deg,rgba(23,71,44,.22),transparent 55%);pointer-events:none}
+.guide-page .article{position:relative}
+.article h1{text-wrap:balance;text-shadow:0 3px 32px rgba(0,0,0,.65)}
+.article>.lead{max-width:760px;font-size:17px;color:rgba(241,235,223,.8);padding-left:22px;border-left:1px solid var(--gold)}
+.article h2{color:#d9bd6c;border-top:1px solid rgba(201,168,76,.16);padding-top:30px;line-height:1.15}
+.article strong{color:var(--cream)}
+.article ul{padding:24px 28px 24px 48px;background:linear-gradient(135deg,rgba(23,71,44,.26),rgba(21,21,21,.62));border-left:2px solid rgba(201,168,76,.55)}
+.article li+li{margin-top:10px}
+.guide-visual{margin:46px 0 58px;position:relative}
+.guide-visual:after{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid rgba(201,168,76,.25);z-index:0}
+.guide-visual img{position:relative;z-index:1;width:100%;aspect-ratio:16/7;object-fit:cover;display:block;filter:saturate(.88) contrast(1.04)}
+.guide-visual figcaption{position:relative;z-index:1;margin-top:14px;color:rgba(241,235,223,.42);font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.guide-links a{transition:.25s;border-bottom:1px solid transparent}
+.guide-links a:hover{background:rgba(23,71,44,.35);border-bottom-color:var(--gold)}
+
+@media(max-width:900px){
+  .seo-card{min-height:280px}
+  .guide-page main>section{padding-top:150px;background-size:auto 620px}
+}
+@media(max-width:600px){
+  .hero-inner{padding-left:18px!important;padding-right:18px!important}
+  .hero h1{font-size:clamp(36px,10.5vw,42px)!important;line-height:.96;letter-spacing:.025em;overflow-wrap:normal}
+  .hero h1 em{display:block;font-size:.78em;line-height:1.05;margin-top:.16em}
+  .hero .lead{font-size:14px;line-height:1.65}
+  .trust div:before{display:none}
+  .seo-card{min-height:270px;padding:32px 26px}
+  .seo-card h3{font-size:30px}
+  .guide-page main>section{padding-top:125px;background-size:auto 500px}
+  .article{padding-left:20px;padding-right:20px}
+  .article h1{font-size:clamp(34px,10.5vw,44px);line-height:1.02;overflow-wrap:break-word}
+  .article>.lead{padding-left:15px;font-size:15px}
+  .article h2{font-size:26px;margin-top:40px;padding-top:24px}
+  .article ul{padding:20px 20px 20px 38px}
+  .guide-visual{margin:34px 0 48px}
+  .guide-visual:after{inset:8px -6px -8px 8px}
+  .guide-visual img{aspect-ratio:4/3}
+}
