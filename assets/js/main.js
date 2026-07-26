@@ -252,3 +252,77 @@
     }, 220);
   });
 })();
+
+/* Collection filters, purchase journey and contact forms */
+(function () {
+  'use strict';
+
+  var filterForm = document.querySelector('[data-collection-filters]');
+  if (filterForm) {
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.catalogue-grid .gem-card'));
+    var count = document.querySelector('[data-result-count]');
+
+    function filterCollection() {
+      var weight = filterForm.querySelector('[name="weight"]').value;
+      var lab = filterForm.querySelector('[name="lab"]').value;
+      var visible = 0;
+
+      cards.forEach(function (card) {
+        var carats = parseFloat(card.dataset.weight || '0');
+        var weightMatch = weight === 'all' ||
+          (weight === 'under-1-25' && carats < 1.25) ||
+          (weight === '1-25-1-50' && carats >= 1.25 && carats <= 1.50) ||
+          (weight === 'over-1-50' && carats > 1.50);
+        var labMatch = lab === 'all' || card.dataset.lab === lab;
+        card.hidden = !(weightMatch && labMatch);
+        if (!card.hidden) visible += 1;
+      });
+
+      if (count) count.textContent = visible + (visible > 1 ? ' pièces' : ' pièce');
+    }
+
+    filterForm.addEventListener('change', filterCollection);
+    filterForm.addEventListener('reset', function () {
+      window.setTimeout(filterCollection, 0);
+    });
+  }
+
+  var contactForm = document.querySelector('[data-inquiry-form]');
+  if (contactForm) {
+    var referenceField = contactForm.querySelector('[name="reference"]');
+    var status = contactForm.querySelector('[data-form-status]');
+    var requestedReference = new URLSearchParams(window.location.search).get('reference');
+    if (referenceField && requestedReference) referenceField.value = requestedReference.toUpperCase();
+
+    document.querySelectorAll('[data-contact]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (referenceField && button.dataset.reference) referenceField.value = button.dataset.reference;
+      });
+    });
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      var data = new FormData(contactForm);
+      var subject = 'Demande Ouest Gems Export';
+      if (data.get('reference')) subject += ' — ' + data.get('reference');
+      var body = [
+        'Nom : ' + data.get('name'),
+        'E-mail : ' + data.get('email'),
+        'Téléphone : ' + (data.get('phone') || 'Non renseigné'),
+        'Référence : ' + (data.get('reference') || 'Demande générale'),
+        'Objet : ' + data.get('request'),
+        '',
+        data.get('message')
+      ].join('\n');
+
+      if (status) {
+        status.hidden = false;
+        status.textContent = 'Votre demande est prête. Votre messagerie va s’ouvrir pour confirmer l’envoi.';
+      }
+      window.location.href = 'mailto:ouestgems.export@gmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+})();
