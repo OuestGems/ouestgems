@@ -162,3 +162,69 @@ var(--guide-image) center top/100% auto no-repeat}
   .guide-visual:after{inset:8px -6px -8px 8px}
   .guide-visual img{aspect-ratio:4/3}
 }
+
+/* Conversion, collection and Maison */
+.purchase-section{background:linear-gradient(135deg,#0d1812,#090a09 58%);position:relative;overflow:hidden}
+.purchase-section:before{content:"";position:absolute;right:-180px;top:-210px;width:520px;height:520px;border:1px solid rgba(201,168,76,.15);border-radius:50%}
+.purchase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:54px;background:rgba(201,168,76,.22)}
+.purchase-step{position:relative;background:#101210;padding:34px 28px;min-height:230px}
+.purchase-step .number{display:block;color:var(--gold);font:300 42px/1 'Cormorant Garamond',serif;margin-bottom:34px}
+.purchase-step h3{font:400 25px/1.1 'Cormorant Garamond',serif;margin:0 0 12px}
+.purchase-step p{font-size:13px;color:rgba(241,235,223,.58)}
+.purchase-reassurance{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 34px;margin:34px 0 0;color:rgba(241,235,223,.65);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.purchase-reassurance span:before{content:"◇";color:var(--gold);margin-right:9px}
+
+.inquiry-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
+.inquiry-copy{position:sticky;top:120px}
+.inquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:38px;background:linear-gradient(145deg,rgba(23,71,44,.25),#111 58%);border:1px solid rgba(201,168,76,.22)}
+.inquiry-form label{display:grid;gap:9px;color:rgba(241,235,223,.52);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+.inquiry-form .full{grid-column:1/-1}
+.inquiry-form input,.inquiry-form select,.inquiry-form textarea{width:100%;box-sizing:border-box;border:1px solid rgba(201,168,76,.22);background:#0b0c0b;color:var(--cream);padding:14px 15px;font:400 13px/1.45 Inter,sans-serif;border-radius:0}
+.inquiry-form textarea{resize:vertical;min-height:125px}
+.inquiry-form input:focus,.inquiry-form select:focus,.inquiry-form textarea:focus{outline:1px solid var(--gold);border-color:var(--gold)}
+.inquiry-form .btn{cursor:pointer}
+.form-note,.form-status{grid-column:1/-1;margin:0;color:rgba(241,235,223,.44);font-size:10px;line-height:1.55}
+.form-status{color:var(--gold2)}
+
+.collection-tools{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:0 0 34px;padding:24px 26px;background:#111;border:1px solid rgba(201,168,76,.16)}
+.collection-filters{display:flex;gap:18px;align-items:end;flex-wrap:wrap}
+.filter-field{display:grid;gap:8px}
+.filter-field span{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:rgba(241,235,223,.46)}
+.filter-field select{min-width:190px;border:1px solid rgba(201,168,76,.24);background:#090a09;color:var(--cream);padding:12px 38px 12px 13px}
+.filter-reset{border:0;background:transparent;color:var(--gold);font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:12px}
+.result-count{color:rgba(241,235,223,.55);font-size:11px;white-space:nowrap}
+.gem-card[hidden]{display:none}
+.product-purchase-note{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:26px;border:1px solid rgba(201,168,76,.18);background:#101110}
+.product-purchase-note strong{grid-column:1/-1;padding:15px 16px;color:var(--gold2);font:400 18px 'Cormorant Garamond',serif;border-bottom:1px solid rgba(201,168,76,.14)}
+.product-purchase-note span{padding:11px 14px;color:rgba(241,235,223,.55);font-size:10px;border-bottom:1px solid rgba(201,168,76,.08)}
+.product-purchase-note span:before{content:"◇";color:var(--gold);margin-right:7px}
+
+.maison-hero{min-height:82vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(3,7,5,.2),#080908 93%),url('../img/terrain-selection.jpg') center/cover no-repeat}
+.maison-hero .container{width:100%;padding-bottom:100px}
+.maison-title{max-width:850px;font:300 clamp(54px,8vw,110px)/.9 'Cormorant Garamond',serif;text-wrap:balance;margin:14px 0 28px}
+.maison-title em{color:var(--gold2)}
+.maison-story{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.maison-story img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(201,168,76,.2)}
+.maison-values{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,.2)}
+.maison-value{padding:42px 32px;background:#111}
+.maison-value h3{font:400 28px/1.1 'Cormorant Garamond',serif;color:var(--gold2)}
+.maison-value p{color:rgba(241,235,223,.6)}
+
+@media(max-width:900px){
+  .purchase-grid{grid-template-columns:1fr 1fr}
+  .inquiry-layout,.maison-story{grid-template-columns:1fr;gap:42px}
+  .inquiry-copy{position:static}
+  .maison-values{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .purchase-grid{grid-template-columns:1fr}
+  .purchase-step{min-height:0}
+  .inquiry-form{grid-template-columns:1fr;padding:26px 20px}
+  .inquiry-form .full{grid-column:auto}
+  .collection-tools{align-items:stretch;flex-direction:column}
+  .collection-filters,.filter-field{width:100%}
+  .filter-field select{width:100%}
+  .maison-hero{min-height:72vh}
+  .maison-hero .container{box-sizing:border-box;padding-left:22px;padding-right:22px}
+  .maison-title{font-size:clamp(48px,15vw,66px)}
+}
