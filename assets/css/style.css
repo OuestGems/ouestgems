@@ -62,5 +62,27 @@
 .oge-assistant-form{display:grid;grid-template-columns:1fr auto;gap:8px;padding:0 15px 12px}
 .oge-assistant-form input{margin:0;min-width:0;font-size:12px;text-transform:none;letter-spacing:0}
 .oge-assistant-form button{border:1px solid var(--gold);background:var(--gold);color:#080808;padding:0 13px;font:500 10px Inter,sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+
+/* SEO guides and visible FAQ */
+.seo-section{background:#0c0c0c}
+.seo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,.12)}
+.seo-card{display:block;padding:34px;background:#151515;text-decoration:none;transition:.3s}
+.seo-card:hover{background:#20201d;transform:translateY(-2px)}
+.seo-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin:0 0 12px;color:var(--cream)}
+.seo-card p{margin:0 0 20px;color:rgba(241,235,223,.58);font-size:13.5px}
+.seo-card span{color:var(--gold);font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.faq-section{background:var(--charcoal)}
+.faq-grid{max-width:900px;margin:0 auto;display:grid;gap:1px;background:rgba(201,168,76,.12)}
+.faq-grid details{background:#111;padding:22px 26px}
+.faq-grid summary{cursor:pointer;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:22px}
+.faq-grid details p{margin:14px 0 0;color:rgba(241,235,223,.62)}
+.article{max-width:850px;margin:0 auto}
+.article h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05}
+.article h2{font-size:30px;margin-top:46px}
+.article p,.article li{color:rgba(241,235,223,.68)}
+.article a{color:var(--gold)}
+.guide-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:48px;background:rgba(201,168,76,.12)}
+.guide-links a{background:#151515;padding:20px;text-decoration:none;font-size:12px}
+@media(max-width:900px){.seo-grid,.guide-links{grid-template-columns:1fr}}
 .oge-assistant-note{margin:0;padding:0 15px 14px;color:rgba(241,235,223,.38);font-size:9px;line-height:1.4}
 @media(max-width:600px){.oge-assistant{right:12px;bottom:12px}.oge-assistant-panel{right:0;bottom:55px}.oge-assistant-toggle{padding:12px 14px}}
