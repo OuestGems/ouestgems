@@ -290,7 +290,27 @@
   var contactForm = document.querySelector('[data-inquiry-form]');
   if (contactForm) {
     var referenceField = contactForm.querySelector('[name="reference"]');
+    var requestField = contactForm.querySelector('[name="request"]');
     var status = contactForm.querySelector('[data-form-status]');
+    var contactSection = contactForm.closest('#contact');
+    var contactLead = contactSection ? contactSection.querySelector('.inquiry-copy .lead') : null;
+    var contactReassurance = contactSection ? contactSection.querySelector('.product-copy') : null;
+    var formNote = contactForm.querySelector('.form-note');
+    var subjectField = document.createElement('input');
+    subjectField.type = 'hidden';
+    subjectField.name = '_subject';
+    subjectField.value = 'Nouvelle demande Ouest Gems Export';
+    contactForm.appendChild(subjectField);
+
+    if (contactLead) {
+      contactLead.textContent = 'Notre équipe répond personnellement sous 24 heures ouvrées et peut transmettre le prix, des photographies complémentaires, des vidéos et le dossier gemmologique de chaque pierre.';
+    }
+    if (contactReassurance) {
+      contactReassurance.textContent = 'Accusé de réception immédiat · Réponse sous 24 h ouvrées · Aucune obligation d’achat.';
+    }
+    if (formNote) {
+      formNote.textContent = 'Vous recevrez immédiatement une confirmation par e-mail. Notre équipe vous répondra personnellement sous 24 heures ouvrées.';
+    }
     var requestedReference = new URLSearchParams(window.location.search).get('reference');
     if (referenceField && requestedReference) referenceField.value = requestedReference.toUpperCase();
 
@@ -304,6 +324,11 @@
       event.preventDefault();
       if (!contactForm.reportValidity()) return;
 
+      var selectedReference = referenceField ? referenceField.value : '';
+      var selectedRequest = requestField ? requestField.value : '';
+      subjectField.value = 'Nouvelle demande Ouest Gems' +
+        (selectedReference ? ' — ' + selectedReference : ' — générale') +
+        (selectedRequest ? ' — ' + selectedRequest : '');
       var data = new FormData(contactForm);
       var submitButton = contactForm.querySelector('[type="submit"]');
       var originalLabel = submitButton.textContent;
@@ -320,11 +345,12 @@
         headers: { Accept: 'application/json' }
       }).then(function (response) {
         if (!response.ok) throw new Error('Formspree response error');
-        var selectedReference = referenceField ? referenceField.value : '';
         contactForm.reset();
         if (referenceField && selectedReference) referenceField.value = selectedReference;
         if (status) {
-          status.textContent = 'Merci. Votre demande a bien été transmise à notre équipe. Nous vous répondrons personnellement.';
+          status.textContent = 'Merci. Votre demande' +
+            (selectedReference ? ' pour la pierre ' + selectedReference : '') +
+            ' a bien été transmise. Un e-mail de confirmation vient de vous être envoyé et notre équipe vous répondra sous 24 heures ouvrées.';
           status.classList.add('success');
         }
         submitButton.textContent = 'Demande envoyée';
