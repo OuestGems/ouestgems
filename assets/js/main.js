@@ -305,24 +305,37 @@
       if (!contactForm.reportValidity()) return;
 
       var data = new FormData(contactForm);
-      var subject = 'Demande Ouest Gems Export';
-      if (data.get('reference')) subject += ' — ' + data.get('reference');
-      var body = [
-        'Nom : ' + data.get('name'),
-        'E-mail : ' + data.get('email'),
-        'Téléphone : ' + (data.get('phone') || 'Non renseigné'),
-        'Référence : ' + (data.get('reference') || 'Demande générale'),
-        'Objet : ' + data.get('request'),
-        '',
-        data.get('message')
-      ].join('\n');
-
+      var submitButton = contactForm.querySelector('[type="submit"]');
+      var originalLabel = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Envoi en cours…';
       if (status) {
         status.hidden = false;
-        status.textContent = 'Votre demande est prête. Votre messagerie va s’ouvrir pour confirmer l’envoi.';
+        status.textContent = 'Transmission sécurisée de votre demande…';
       }
-      window.location.href = 'mailto:ouestgems.export@gmail.com?subject=' +
-        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Formspree response error');
+        var selectedReference = referenceField ? referenceField.value : '';
+        contactForm.reset();
+        if (referenceField && selectedReference) referenceField.value = selectedReference;
+        if (status) {
+          status.textContent = 'Merci. Votre demande a bien été transmise à notre équipe. Nous vous répondrons personnellement.';
+          status.classList.add('success');
+        }
+        submitButton.textContent = 'Demande envoyée';
+      }).catch(function () {
+        if (status) {
+          status.innerHTML = 'L’envoi n’a pas abouti. Vous pouvez nous écrire à <a href="mailto:ouestgems.export@gmail.com">ouestgems.export@gmail.com</a>.';
+          status.classList.remove('success');
+        }
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      });
     });
   }
 })();
