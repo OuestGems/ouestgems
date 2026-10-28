@@ -179,6 +179,15 @@ var(--guide-image) center top/100% auto no-repeat}
   .guide-visual img{aspect-ratio:4/3}
 }
 
+/* Cleaner labels and stronger desktop imagery */
+.universe-count,.category-visual>span{display:none}
+@media(min-width:901px){
+  .universe-art{width:min(34vw,520px);height:min(66vh,640px)}
+  .featured-stones{grid-template-columns:.72fr 2.5fr;gap:5vw}
+  .category-feature{max-width:1320px;grid-template-columns:62% 38%}
+  .category-feature.reverse{grid-template-columns:38% 62%}
+}
+
 /* Conversion, collection and Maison */
 .purchase-section{background:linear-gradient(135deg,#0d1812,#090a09 58%);position:relative;overflow:hidden}
 .purchase-section:before{content:"";position:absolute;right:-180px;top:-210px;width:520px;height:520px;border:1px solid rgba(201,168,76,.15);border-radius:50%}
