@@ -108,7 +108,7 @@
       id: 'jewelry',
       label: 'Proposez-vous aussi des bijoux ?',
       keywords: ['bijou', 'bijoux', 'bague', 'collier', 'joaillerie', 'monture', 'sertissage'],
-      answer: 'Ouest Gems Export propose uniquement des pierres, sans création de bijoux.'
+      answer: 'Ouest Gems Export développe désormais des bijoux en séries limitées autour de ses émeraudes naturelles. Découvrez les premières collections dans l’univers Bijoux.'
     },
     {
       id: 'professionals',
@@ -138,7 +138,7 @@
     { id: 'payment', label: 'How can I pay?', keywords: ['payment', 'pay', 'bank transfer', 'credit card', 'paypal'], answer: 'Payment is made by bank transfer.' },
     { id: 'reservation', label: 'Can I reserve a stone?', keywords: ['reserve', 'reservation', 'hold', '12 hours'], answer: 'Yes. A stone can be reserved for 12 hours.' },
     { id: 'original-certificate', label: 'Is the original certificate included?', keywords: ['original certificate', 'certificate included', 'provided with'], answer: 'Yes. The available original certificate is provided with the stone.' },
-    { id: 'jewelry', label: 'Do you also sell jewellery?', keywords: ['jewellery', 'jewelry', 'ring', 'necklace', 'setting', 'mounting'], answer: 'Ouest Gems Export offers loose stones only and does not create jewellery.' },
+    { id: 'jewelry', label: 'Do you also sell jewellery?', keywords: ['jewellery', 'jewelry', 'ring', 'necklace', 'setting', 'mounting'], answer: 'Ouest Gems Export is now developing limited jewellery collections around its natural emeralds. Discover the first concepts in the Jewellery world.' },
     { id: 'professionals', label: 'Do you work with professionals?', keywords: ['professional', 'jeweller', 'jeweler', 'partnership', 'retailer', 'b2b'], answer: 'Yes. Partnerships with professionals are available on request.' },
     { id: 'sourcing', label: 'Can you source a specific stone?', keywords: ['specific stone', 'personal search', 'bespoke', 'criteria', 'specific colour', 'specific color', 'source'], answer: 'Yes. A personalised search based on your criteria is available on request.' }
   ];
