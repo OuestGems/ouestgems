@@ -1,10 +1,28 @@
 (function () {
   'use strict';
 
+  function clearTransitionCurtains() {
+    document.querySelectorAll('.universe-transition,.world-reveal').forEach(function (item) { item.remove(); });
+  }
+
+  window.addEventListener('pageshow', clearTransitionCurtains);
+
+  if (!document.querySelector('.split-hero') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var reveal = document.createElement('div');
+    reveal.className = 'world-reveal';
+    reveal.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(reveal);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { reveal.classList.add('is-revealed'); });
+    });
+    window.setTimeout(function () { reveal.remove(); }, 760);
+  }
+
   document.querySelectorAll('.split-hero .universe').forEach(function (link) {
     link.addEventListener('click', function (event) {
       if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       event.preventDefault();
+      clearTransitionCurtains();
       var curtain = document.createElement('div');
       curtain.className = 'universe-transition';
       curtain.setAttribute('aria-hidden', 'true');
