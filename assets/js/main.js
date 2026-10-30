@@ -1,6 +1,19 @@
 (function () {
   'use strict';
 
+  document.querySelectorAll('.split-hero .universe').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      event.preventDefault();
+      var curtain = document.createElement('div');
+      curtain.className = 'universe-transition';
+      curtain.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(curtain);
+      requestAnimationFrame(function () { curtain.classList.add('is-opening'); });
+      window.setTimeout(function () { window.location.href = link.href; }, 520);
+    });
+  });
+
   document.querySelectorAll('.thumbs img').forEach(function (img) {
     img.addEventListener('click', function () {
       var wrap = img.closest('.gallery');
@@ -111,6 +124,18 @@
       answer: 'Ouest Gems Export développe désormais des bijoux en séries limitées autour de ses émeraudes naturelles. Découvrez les premières collections dans l’univers Bijoux.'
     },
     {
+      id: 'circle',
+      label: 'Qu’est-ce que le Cercle ?',
+      keywords: ['cercle', 'newsletter', 'avant-premiere', 'avant-première', 'inscription', 'edition limitee', 'édition limitée'],
+      answer: 'Le Cercle réunit les clients qui souhaitent prendre part à l’aventure de la Maison : avant-premières, avis sur les futures créations et accès prioritaire aux pièces limitées.'
+    },
+    {
+      id: 'care',
+      label: 'Comment entretenir un bijou ?',
+      keywords: ['entretien', 'entretenir', 'nettoyer', 'nettoyage', 'prendre soin'],
+      answer: 'Évitez les chocs, les produits chimiques et les variations brutales de température. Nettoyez délicatement votre bijou avec un chiffon doux et demandez conseil à un professionnel pour toute intervention.'
+    },
+    {
       id: 'professionals',
       label: 'Travaillez-vous avec des professionnels ?',
       keywords: ['professionnel', 'bijoutier', 'joaillier', 'partenariat', 'revendeur', 'b2b'],
@@ -139,6 +164,8 @@
     { id: 'reservation', label: 'Can I reserve a stone?', keywords: ['reserve', 'reservation', 'hold', '12 hours'], answer: 'Yes. A stone can be reserved for 12 hours.' },
     { id: 'original-certificate', label: 'Is the original certificate included?', keywords: ['original certificate', 'certificate included', 'provided with'], answer: 'Yes. The available original certificate is provided with the stone.' },
     { id: 'jewelry', label: 'Do you also sell jewellery?', keywords: ['jewellery', 'jewelry', 'ring', 'necklace', 'setting', 'mounting'], answer: 'Ouest Gems Export is now developing limited jewellery collections around its natural emeralds. Discover the first concepts in the Jewellery world.' },
+    { id: 'circle', label: 'What is the Circle?', keywords: ['circle', 'newsletter', 'preview', 'limited edition', 'join'], answer: 'The Circle brings together clients who wish to take part in the House’s story through private previews, input on future creations and priority access to limited pieces.' },
+    { id: 'care', label: 'How should I care for jewellery?', keywords: ['care', 'clean', 'cleaning', 'maintain'], answer: 'Avoid shocks, chemicals and sudden temperature changes. Clean jewellery gently with a soft cloth and consult a professional before any intervention.' },
     { id: 'professionals', label: 'Do you work with professionals?', keywords: ['professional', 'jeweller', 'jeweler', 'partnership', 'retailer', 'b2b'], answer: 'Yes. Partnerships with professionals are available on request.' },
     { id: 'sourcing', label: 'Can you source a specific stone?', keywords: ['specific stone', 'personal search', 'bespoke', 'criteria', 'specific colour', 'specific color', 'source'], answer: 'Yes. A personalised search based on your criteria is available on request.' }
   ];
