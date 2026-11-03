@@ -1,84 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ouest Gems | Bijoux et émeraudes naturelles de Swat</title>
-  <meta name="description" content="Ouest Gems sélectionne des émeraudes naturelles de Swat et imagine des bijoux singuliers en séries limitées. Pierres documentées, maison française.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030-2">
-  <link rel="canonical" href="https://ouestgems.com/">
-  <link rel="alternate" hreflang="fr" href="https://ouestgems.com/">
-  <link rel="alternate" hreflang="en" href="https://ouestgems.com/en/">
-  <meta name="theme-color" content="#f3efe6">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="Ouest Gems">
-  <meta property="og:title" content="Ouest Gems | Bijoux et émeraudes naturelles de Swat">
-  <meta property="og:description" content="Deux univers autour d’une pierre rare : émeraudes naturelles documentées et bijoux singuliers en séries limitées.">
-  <meta property="og:url" content="https://ouestgems.com/">
-  <meta property="og:image" content="https://ouestgems.com/assets/img/jewelry-hand-emerald-hero.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ouestgems.com/#organization","name":"Ouest Gems","legalName":"Ouest Gems Export SAS","url":"https://ouestgems.com/","logo":"https://ouestgems.com/assets/img/logo-oge-luxe.png","email":"ouestgems.export@gmail.com","address":{"@type":"PostalAddress","addressCountry":"FR"}},{"@type":"WebSite","@id":"https://ouestgems.com/#website","url":"https://ouestgems.com/","name":"Ouest Gems","inLanguage":["fr-FR","en"],"publisher":{"@id":"https://ouestgems.com/#organization"}},{"@type":"WebPage","@id":"https://ouestgems.com/#webpage","url":"https://ouestgems.com/","name":"Ouest Gems | Bijoux et émeraudes naturelles de Swat","isPartOf":{"@id":"https://ouestgems.com/#website"},"about":{"@id":"https://ouestgems.com/#organization"},"inLanguage":"fr-FR"}]}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ouest Gems | Bijoux et émeraudes naturelles de Swat</title>
+<meta name="description" content="Ouest Gems sélectionne des émeraudes naturelles de Swat et crée des bijoux en séries limitées. Poussez une porte : les bijoux ou les pierres.">
+<meta property="og:image" content="https://ouestgems.com/assets/img/jewelry-hand-emerald-hero.png">
+<meta name="theme-color" content="#07100d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#07100d;--gold:#c9a96a;--ivory:#ede6d6;--accent:var(--gold);--serif:"Cormorant Garamond",Georgia,serif;--sans:Inter,system-ui,sans-serif;--px:0;--py:0}
+body[data-w="emeraudes"]{--accent:#5fd0a3}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ink);color:var(--ivory);font:300 1rem/1.7 var(--sans);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:5;background:radial-gradient(420px circle at var(--mx,50%) var(--my,40%),color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
+.btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);background:none;padding:.85rem 1.9rem;font:500 .9rem var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover,.btn.solid{background:var(--accent);color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1.1rem 4vw;background:linear-gradient(var(--ink),transparent);transition:opacity 1.2s .6s}
+body[data-w="home"] nav .links{opacity:0;pointer-events:none}
+nav .logo{font:500 1.5rem var(--serif)}
+nav .links{display:flex;gap:1.8rem;align-items:center;font-size:.9rem;transition:opacity 1.2s .8s}
+nav .links a,nav .links button{opacity:.75;background:none;border:0;color:inherit;font:inherit;cursor:pointer;transition:opacity .3s}
+nav .links a:hover,nav .links button:hover,nav .on{opacity:1!important;color:var(--accent)}
+
+/* ===== PORTAIL CINÉMATIQUE ===== */
+#home{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:5rem 4vw 2rem;overflow:hidden;background:url(assets/scenes/portail.jpg) center/cover,radial-gradient(ellipse at 50% 100%,#14503c,#07100d 70%)}
+.fog{position:absolute;left:-20%;right:-20%;height:45%;bottom:-6%;filter:blur(28px);opacity:.55;background:radial-gradient(ellipse at 20% 60%,#9fe5c8aa,transparent 55%),radial-gradient(ellipse at 70% 40%,#c9a96a66,transparent 55%),radial-gradient(ellipse at 50% 80%,#6fcfa6aa,transparent 60%);animation:drift 22s ease-in-out infinite alternate}
+.fog.b{bottom:18%;height:35%;opacity:.3;animation-duration:30s;animation-direction:alternate-reverse}
+#home h1{position:relative;z-index:2;font-size:clamp(1.6rem,3.2vw,2.8rem);text-align:center;animation:rise 1.4s .2s both}
+#home .sub{position:relative;z-index:2;opacity:.65;text-align:center;animation:rise 1.4s .5s both}
+.doors{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,6vw,6rem);width:100%;max-width:1000px;justify-items:center}
+.door{--c:var(--gold);--fh:min(54vh,520px);display:flex;flex-direction:column;align-items:center;gap:.5rem;background:none;border:0;color:inherit;cursor:pointer;transition:transform 1.3s cubic-bezier(.7,0,.3,1),opacity .7s;animation:rise 1.6s .8s both}
+.door.em{--c:#5fd0a3;animation-delay:1.1s}
+.frame{position:relative;height:var(--fh);aspect-ratio:3/4.4;perspective:900px;overflow:hidden;border-radius:999px 999px 4px 4px/52% 52% 4px 4px;border:3px solid color-mix(in srgb,var(--c) 75%,#000);box-shadow:0 0 70px -8px color-mix(in srgb,var(--c) 60%,transparent);transform:translate(calc(var(--px)*10px),calc(var(--py)*6px));transition:box-shadow .6s}
+.door:hover .frame{box-shadow:0 0 120px 4px color-mix(in srgb,var(--c) 80%,transparent)}
+.room{position:absolute;inset:0;background:url(assets/scenes/porte-bijoux.jpg) 50% 60%/145% auto no-repeat,radial-gradient(circle at 50% 75%,#ffe9b0,#c9a96a55 35%,#07100d 75%)}
+.em .room{background:url(assets/scenes/porte-emeraudes.jpg) 50% 60%/150% auto no-repeat,radial-gradient(circle at 50% 70%,#b6ffe0,#1f9a6c88 35%,#05100c 75%)}
+.beams{position:absolute;inset:-60%;background:repeating-conic-gradient(from 0deg at 50% 70%,color-mix(in srgb,var(--c) 28%,transparent) 0 6deg,transparent 6deg 22deg);animation:spin 40s linear infinite;mask:radial-gradient(circle at 50% 70%,#000,transparent 60%)}
+.layer{position:absolute;inset:0;transform:translate(calc(var(--px)*-18px),calc(var(--py)*-12px));transition:transform .2s}
+.gem{position:absolute;animation:float 6s ease-in-out infinite}
+.gem svg{width:100%;height:auto;filter:drop-shadow(0 8px 14px #000a)}
+.spark{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 12px 3px var(--c);animation:tw 3s ease-in-out infinite}
+.leaf{position:absolute;inset:0;transform-origin:0 50%;transform:rotateY(0);transition:transform 1.8s cubic-bezier(.6,0,.2,1);background:linear-gradient(100deg,#0c1814,#16302a 60%,#0c1814);border-radius:inherit;box-shadow:inset 0 0 0 5px color-mix(in srgb,var(--c) 45%,#000);backface-visibility:hidden}
+.em .leaf{background:linear-gradient(100deg,#0c2a20,#1c5a45 60%,#0c2a20)}
+.leaf::before{content:"";position:absolute;inset:26% 15% 7%;border:1px solid color-mix(in srgb,var(--c) 70%,transparent);background:linear-gradient(transparent calc(50% - .5px),color-mix(in srgb,var(--c) 70%,transparent) 50%,transparent calc(50% + .5px))}
+.leaf::after{content:"";position:absolute;right:9%;top:54%;width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.leaf b{position:absolute;top:13%;left:0;right:0;text-align:center;font:500 clamp(.9rem,1.5vw,1.25rem) var(--serif);color:var(--c);letter-spacing:.06em}
+.door.tease .leaf{transform:rotateY(-16deg)}
+.door:hover .leaf,.door:focus-visible .leaf{transform:rotateY(-38deg)}
+.door.in .leaf{transform:rotateY(-84deg);transition-duration:1.1s}
+.steps{width:calc(var(--fh)*.8);height:26px;background:repeating-linear-gradient(#ffffff30 0 2px,#ffffff0d 2px 9px);clip-path:polygon(5% 0,95% 0,100% 100%,0 100%)}
+.door .t{font:400 clamp(1.6rem,3vw,2.4rem) var(--serif)}
+.door .go{font-size:.85rem;color:var(--c);opacity:0;transition:.4s}
+.door:hover .go,.door:focus-visible .go{opacity:1}
+.door.in{transform:scale(11);transform-origin:50% 38%;z-index:30}
+.door.out{opacity:0}
+#ov{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:0;background:radial-gradient(circle,#fff6d8,var(--c,#c9a96a) 40%,#07100d 90%)}
+@keyframes float{50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes tw{50%{opacity:.1;transform:scale(.4)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{to{transform:translateX(9%)}}
+@keyframes shine{to{background-position:200% 0}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+
+/* ===== MONDES ===== */
+.hero{position:relative;overflow:hidden}
+.hero .scene{position:absolute;inset:0;background:url(assets/scenes/monde-bijoux.jpg) center/cover,radial-gradient(circle at 70% 55%,#c9a96a55,#07100d 65%)}
+.hero.em .scene{background:url(assets/scenes/monde-emeraudes.jpg) center/cover,radial-gradient(circle at 70% 55%,#1f7a5a99,#07100d 65%)}
+.hero .scene .beams{opacity:.7}
+.hero .scene{filter:brightness(var(--lum,1.25)) saturate(1.08)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 12% 55%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 55%)}
+.wh{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:4vw;min-height:100vh;padding:7rem 5vw 4rem}
+.wh h1{font-size:clamp(3rem,6.5vw,6rem)}
+.play .wh h1,.play .wh .lead,.play .wh .price,.play .wh .btn,.play .stage{animation:rise 1.5s both}
+.play .wh .lead{animation-delay:.3s}.play .wh .price,.play .wh .btn{animation-delay:.5s}.play .stage{animation-delay:.2s}
+.wh .lead{margin:1.3rem 0 1rem;max-width:30rem;opacity:.85}
+.price{font:400 1.8rem var(--serif);color:var(--accent);margin-bottom:1.5rem}
+.stage{perspective:1200px;position:relative;aspect-ratio:4/5;max-height:76vh;margin:auto;width:100%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 60%,#1f7a5a55,#07100d99 72%);backdrop-filter:blur(8px);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+.stage .big{width:62%;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 30px 40px #000)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:rotateY(var(--ry,-5deg)) rotateX(var(--rx,0deg));transition:transform .25s}
+.sec{padding:5.5rem 5vw}
+.sec>h2{font-size:clamp(2rem,4vw,3.4rem);margin-bottom:.6rem}
+.sec>p{max-width:34rem;opacity:.75;margin-bottom:3rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.6rem}
+.card{opacity:0;transform:translateY(40px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.card.vis{opacity:1;transform:none}
+.card .ph{position:relative;overflow:hidden;aspect-ratio:4/5;background:radial-gradient(circle at 50% 65%,#1f7a5a77,#081410 72%);display:grid;place-items:center;transform:perspective(900px) rotateY(var(--ry,0)) rotateX(var(--rx,0));transition:transform .25s}
+.card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,#ffffff22 50%,transparent 60%) 0 0/200% 100%;opacity:0;transition:opacity .3s}
+.card:hover .ph::after{opacity:1;animation:shine 1.2s}
+.card .ph svg{width:52%;height:auto;animation:float 7s ease-in-out infinite;filter:drop-shadow(0 18px 20px #000a)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.card:hover .ph img{transform:scale(1.07)}
+.card h3{font-size:1.7rem;margin-top:1rem}
+.card .meta{opacity:.65;font-size:.9rem}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem}
+.card .row b{font:400 1.4rem var(--serif);color:var(--accent)}
+.card .btn{padding:.6rem 1.2rem}
+.band{padding:5rem 5vw;border-top:1px solid #ffffff1a;display:flex;flex-wrap:wrap;gap:3rem;justify-content:space-between;align-items:center}
+.band h2{font-size:clamp(1.8rem,3vw,2.6rem);max-width:28rem}
+footer{padding:2.5rem 5vw;border-top:1px solid #ffffff1a;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;font-size:.85rem;opacity:.65}
+footer nav{all:unset;display:flex;gap:1.5rem}
+#cart{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#0b1b16;border-left:1px solid #c9a96a55;z-index:150;padding:2rem;display:flex;flex-direction:column;gap:1.1rem;transform:translateX(105%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+#cart.open{transform:none}
+#cart .vis2{height:min(300px,38vh);display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle,#1f7a5a77,#081410 75%)}
+#cart .vis2 img{width:100%;height:100%;object-fit:cover}
+#cart .vis2 svg{height:170px;width:auto}
+#cart h3{font-size:2rem}
+#cart .x{align-self:flex-end;background:none;border:0;color:inherit;font-size:1.6rem;cursor:pointer}
+#cart small{opacity:.65}
+#veil{position:fixed;inset:0;background:#0006;z-index:140;opacity:0;pointer-events:none;transition:opacity .4s}
+#veil.on{opacity:1;pointer-events:auto}
+
+/* mobile : portes l'une sous l'autre */
+.hero .stage{display:none}.hero .wh{grid-template-columns:minmax(0,38rem)}.hero .wh h1{font-size:clamp(2.6rem,5.2vw,5rem)}nav .logo{white-space:nowrap}
+@media(max-width:800px),(orientation:portrait){
+ .doors{grid-template-columns:1fr;gap:.2rem}
+ .door{--fh:26vh;gap:.2rem}.steps{height:14px}.door .go{opacity:1}
+ #home{padding-top:4.5rem;gap:.4rem}
+ .wh,.hero .wh{grid-template-columns:1fr;padding-top:6rem;align-content:end;padding-bottom:5rem}
+ nav .links{gap:1rem;font-size:.8rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.glow{display:none}.leaf{transform:rotateY(-40deg)}}
+</style>
 </head>
-<body class="storefront">
-  <nav class="shop-nav" aria-label="Navigation principale">
-    <a class="shop-brand" href="index.html">Ouest Gems <span>Maison française · Ouest Gems Export</span></a>
-    <div class="shop-links"><a href="bijoux.html">Bijoux</a><a href="collection.html">Émeraudes</a><a href="pages/la-maison.html">La Maison</a></div>
-    <div class="shop-actions"><a href="en/index.html" lang="en">EN</a><a href="#newsletter" aria-label="Accéder au cercle privé">Le Cercle</a></div>
-  </nav>
+<body data-w="home">
+<div class="glow" aria-hidden="true"></div>
+<div id="ov" aria-hidden="true"></div>
 
-  <main>
-    <header class="split-hero" aria-labelledby="home-title">
-      <h1 id="home-title" class="sr-only">Ouest Gems Export — Bijoux et émeraudes naturelles</h1>
-      <a class="universe universe-jewels" href="bijoux.html">
-        <span class="universe-count">01</span>
-        <span class="universe-art"><img src="assets/img/jewelry-hand-emerald-hero.png" alt="Pendentif main en or et émeraude"></span>
-        <span class="universe-copy"><small>Créations singulières</small><strong>Nos bijoux</strong><em>Entrer dans l’univers</em></span>
-      </a>
-      <a class="universe universe-gems" href="collection.html">
-        <span class="universe-count">02</span>
-        <span class="universe-art"><img src="assets/img/oge-004-1.jpg" alt="Émeraude naturelle OGE-004"></span>
-        <span class="universe-copy"><small>Sélection à la source</small><strong>Nos émeraudes</strong><em>Découvrir les pierres</em></span>
-      </a>
-      <p class="hero-manifesto"><span>Deux univers</span><em>Une même pierre</em></p>
-    </header>
+<!-- Bijoux dessinés en SVG avec une émeraude sertie. À remplacer par vos photos ou rendus. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+ <linearGradient id="gG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dfa6"/><stop offset=".5" stop-color="#c9a96a"/><stop offset="1" stop-color="#8d6e35"/></linearGradient>
+ <linearGradient id="gS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#b9c0c4"/><stop offset="1" stop-color="#6e777c"/></linearGradient>
+ <linearGradient id="gE" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ff0bd"/><stop offset=".5" stop-color="#1f9a6c"/><stop offset="1" stop-color="#0b4d38"/></linearGradient>
+ <symbol id="gem" viewBox="0 0 60 80"><polygon points="12,2 48,2 58,14 58,66 48,78 12,78 2,66 2,14" fill="url(#gE)"/><polygon points="17,12 43,12 49,19 49,61 43,68 17,68 11,61 11,19" fill="#0b4d38" opacity=".35"/><polygon points="17,12 43,12 49,19 11,19" fill="#fff" opacity=".4"/><path d="M2 14L11 19M58 14L49 19M2 66L11 61M58 66L49 61" stroke="#c9ffe6" stroke-opacity=".5"/></symbol>
+ <symbol id="hand" viewBox="0 0 100 150"><circle cx="50" cy="9" r="7" fill="none" stroke="url(#gG)" stroke-width="3.5"/><g fill="url(#gG)"><rect x="22" y="48" width="12" height="46" rx="6"/><rect x="36" y="22" width="12" height="62" rx="6"/><rect x="50" y="18" width="12" height="66" rx="6"/><rect x="64" y="30" width="12" height="54" rx="6"/><rect x="10" y="78" width="12" height="38" rx="6" transform="rotate(-28 16 96)"/><path d="M22 84h54v28q0 24-27 32-27-8-27-32z"/></g><use href="#gem" x="38" y="92" width="24" height="34"/></symbol>
+ <symbol id="cage" viewBox="0 0 100 140"><circle cx="50" cy="10" r="7" fill="none" stroke="url(#gS)" stroke-width="3.5"/><g fill="none" stroke="url(#gS)" stroke-width="3"><ellipse cx="50" cy="82" rx="38" ry="12"/><ellipse cx="50" cy="82" rx="30" ry="30"/><ellipse cx="50" cy="82" rx="16" ry="44"/><ellipse cx="50" cy="82" rx="38" ry="44" opacity=".6"/></g><use href="#gem" x="38" y="62" width="24" height="40"/></symbol>
+ <symbol id="drop" viewBox="0 0 80 150"><circle cx="40" cy="12" r="9" fill="none" stroke="url(#gG)" stroke-width="3.5"/><path d="M28 34q12-8 24 0l6 26H22z" fill="url(#gG)"/><path d="M30 38q20 6 22 14M28 48q22 4 26 12" stroke="#8d6e35" fill="none" stroke-width="2"/><path d="M40 60C14 74 10 100 20 118q20 22 40 0c10-18 6-44-20-58z" fill="url(#gE)"/><path d="M40 62L22 100 40 124 58 100z" fill="#fff" opacity=".18"/></symbol>
+ <symbol id="twig" viewBox="0 0 120 130"><ellipse cx="60" cy="86" rx="36" ry="38" fill="none" stroke="url(#gG)" stroke-width="5"/><g stroke="url(#gG)" stroke-width="4" fill="none" stroke-linecap="round"><path d="M44 54L30 28M30 28l-9-6M30 28l6-14M76 54l14-26M90 28l9-6M90 28l-6-14M60 48v-24"/></g><use href="#gem" x="42" y="30" width="36" height="48"/></symbol>
+ <symbol id="claw" viewBox="0 0 120 130"><path d="M24 92q36 40 72 0" fill="none" stroke="url(#gS)" stroke-width="8"/><path d="M34 80L26 44M86 80l8-36M52 70l-6-32M68 70l6-32" stroke="url(#gS)" stroke-width="5" stroke-linecap="round"/><use href="#gem" x="44" y="26" width="32" height="44"/></symbol>
+</defs></svg>
 
-    <section class="shop-intro">
-      <p class="eyebrow">Maison française · Pierres naturelles</p>
-      <h2><span class="intro-lead">Trouvez la pierre</span><br><em>qui racontera votre histoire.</em></h2>
-      <p>Une émeraude ne se choisit pas seulement pour sa couleur. Elle se choisit pour l’émotion qu’elle provoque. Découvrez des pierres naturelles rares et les bijoux singuliers imaginés pour les révéler.</p>
-      <div class="shop-values"><span>Émeraudes naturelles</span><span>Pièces en séries limitées</span><span>Traçabilité documentée</span></div>
-    </section>
+<nav>
+  <a class="logo" href="#" data-go="home">Ouest Gems</a>
+  <div class="links">
+    <a href="#bijoux" data-go="bijoux" id="n-b">Bijoux</a>
+    <a href="#emeraudes" data-go="emeraudes" id="n-e">Émeraudes</a>
+    <a href="pages/la-maison.html">La Maison</a>
+    <button id="cartBtn">Panier</button>
+  </div>
+</nav>
 
-    <section class="featured-stones">
-      <div class="feature-heading"><p class="eyebrow">Sélection actuelle</p><h2>Des pierres singulières.<br><em>Une sélection rare.</em></h2><a href="collection.html">Voir les 13 émeraudes →</a></div>
-      <div class="feature-grid">
-        <a href="produits/oge-004.html"><img src="assets/img/oge-004-1.jpg" alt="Émeraude naturelle OGE-004, 1,41 carat"><span><b>OGE-004</b> 1,41 ct · Swat</span></a>
-        <a href="produits/oge-007.html"><img src="assets/img/oge-007-1.jpg" alt="Émeraude naturelle OGE-007, 1,51 carat"><span><b>OGE-007</b> 1,51 ct · Swat</span></a>
-        <a href="produits/oge-001.html"><img src="assets/img/oge-001-1.jpg" alt="Émeraude naturelle OGE-001, 1,85 carat"><span><b>OGE-001</b> 1,85 ct · Swat</span></a>
+<main>
+<section id="home" aria-label="Choisir un univers">
+  <div class="fog b"></div><div class="fog"></div>
+  <h1>Poussez une porte</h1>
+  <p class="sub">Deux univers, une même pierre : l’émeraude de Swat.</p>
+  <div class="doors" id="doors">
+    <button class="door" data-go="bijoux" aria-label="Entrer dans l’univers des bijoux">
+      <div class="frame">
+        <div class="room"><div class="beams"></div><div class="layer">
+          <div class="gem" style="left:14%;top:30%;width:34%"><svg viewBox="0 0 100 150"><use href="#hand"/></svg></div>
+          <div class="gem" style="left:56%;top:22%;width:28%;animation-delay:-3s"><svg viewBox="0 0 100 140"><use href="#cage"/></svg></div>
+          <div class="gem" style="left:50%;top:56%;width:34%;animation-delay:-2s"><svg viewBox="0 0 120 130"><use href="#twig"/></svg></div>
+          <i class="spark" style="left:22%;top:22%"></i><i class="spark" style="left:76%;top:50%;animation-delay:-1s"></i><i class="spark" style="left:40%;top:78%;animation-delay:-2s"></i>
+        </div></div>
+        <div class="leaf"><b>Bijoux</b></div>
       </div>
-    </section>
-
-    <section class="seo-home" aria-labelledby="seo-home-title">
-      <div class="seo-home-heading"><p class="eyebrow">Conseils gemmologiques</p><h2 id="seo-home-title">Comprendre, choisir<br><em>et porter l’émeraude.</em></h2><p>Ouest Gems accompagne chaque découverte avec des informations claires sur l’origine, la couleur, les traitements, la certification et l’entretien des émeraudes naturelles.</p></div>
-      <div class="seo-home-grid">
-        <a href="guides/emeraude-swat-pakistan.html"><span>Origine</span><h3>Émeraudes de Swat</h3><p>Comprendre l’origine pakistanaise, les nuances de vert et les éléments d’un dossier gemmologique.</p><b>Lire le guide →</b></a>
-        <a href="guides/guide-achat-emeraude.html"><span>Choisir</span><h3>Guide d’achat</h3><p>Comparer la couleur, la pureté, la taille, le poids et la documentation avant une acquisition.</p><b>Préparer son choix →</b></a>
-        <a href="guides/reconnaitre-vraie-emeraude.html"><span>Authenticité</span><h3>Reconnaître une émeraude</h3><p>Distinguer pierre naturelle, émeraude synthétique et imitation à partir d’éléments vérifiables.</p><b>Découvrir les critères →</b></a>
-        <a href="guides/entretenir-emeraude.html"><span>Conseils</span><h3>Entretenir son émeraude</h3><p>Préserver la beauté d’une pierre ou d’un bijou grâce à des gestes adaptés à cette gemme délicate.</p><b>Voir les précautions →</b></a>
+      <span class="steps"></span><span class="t">Les bijoux</span><span class="go">Entrer et acheter</span>
+    </button>
+    <button class="door em" data-go="emeraudes" aria-label="Entrer dans l’univers des émeraudes">
+      <div class="frame">
+        <div class="room"><div class="beams"></div><div class="layer">
+          <div class="gem" style="left:24%;top:24%;width:52%"><svg viewBox="0 0 60 80"><use href="#gem"/></svg></div>
+          <div class="gem" style="left:6%;top:60%;width:18%;animation-delay:-2s"><svg viewBox="0 0 60 80"><use href="#gem"/></svg></div>
+          <div class="gem" style="left:76%;top:42%;width:15%;animation-delay:-4s"><svg viewBox="0 0 60 80"><use href="#gem"/></svg></div>
+          <i class="spark" style="left:30%;top:18%"></i><i class="spark" style="left:72%;top:72%;animation-delay:-1.5s"></i><i class="spark" style="left:12%;top:42%;animation-delay:-.7s"></i>
+        </div></div>
+        <div class="leaf"><b>Émeraudes</b></div>
       </div>
-    </section>
+      <span class="steps"></span><span class="t">Les émeraudes</span><span class="go">Explorer les pierres</span>
+    </button>
+  </div>
+</section>
 
-    <section class="private-circle" id="newsletter">
-      <div><p class="eyebrow">Avant-premières · Participation</p><h2>Entrez dans<br><em>le Cercle.</em></h2><p class="circle-promise">Prenez part à l’histoire de la Maison.</p></div>
-      <div><p>Le Cercle vous place au premier rang de l’aventure Ouest Gems : découvrez les sélections avant leur présentation, partagez votre avis sur les futures créations et accédez en priorité aux pièces proposées en quantité limitée.</p><ul class="circle-benefits"><li>Avant-premières privées</li><li>Choix et avis sur les créations</li><li>Accès prioritaire aux éditions limitées</li></ul><form action="https://formspree.io/f/xwvgavdj" method="POST"><label class="sr-only" for="circle-email">Votre adresse e-mail</label><input id="circle-email" type="email" name="email" autocomplete="email" placeholder="Votre adresse e-mail" required><input type="hidden" name="request" value="Inscription au Cercle"><label class="circle-consent"><input type="checkbox" name="consentement" required> Je souhaite recevoir les nouvelles et invitations du Cercle.</label><button type="submit">Rejoindre le Cercle</button></form><small>Consentement révocable à tout moment. Consultez notre <a href="pages/confidentialite.html">politique de confidentialité</a>.</small></div>
+<div id="bijoux" class="world" hidden>
+  <div class="hero"><div class="scene"><div class="beams"></div></div>
+    <section class="wh">
+      <div>
+        <h1>Des bijoux sertis d’une émeraude</h1>
+        <p class="lead">Séries limitées, émeraude naturelle de Swat. Livraison soignée depuis la France.</p>
+        <p class="price">Pendentif Main, 490 €</p>
+        <button class="btn solid" data-buy="main">Acheter le pendentif</button>
+      </div>
+      <div class="stage" data-tilt><svg class="big" viewBox="0 0 100 150"><use href="#hand"/></svg></div>
     </section>
-  </main>
+  </div>
+  <section class="sec">
+    <h2>Toutes les pièces</h2>
+    <p>Chaque bijou est serti d’au moins une émeraude naturelle. Un clic pour choisir, un clic pour payer.</p>
+    <div class="grid" id="shop"></div>
+  </section>
+  <section class="band"><h2>Rejoignez le Cercle pour découvrir les prochaines pièces en avant-première.</h2><a class="btn" href="index-ancien.html#newsletter">Rejoindre le Cercle</a></section>
+</div>
 
-  <footer class="shop-footer"><div><a class="shop-brand" href="index.html">Ouest Gems <span>Export</span></a><p>Émeraudes naturelles et créations singulières.</p></div><div><a href="pages/la-maison.html">La Maison</a><a href="pages/mentions-legales.html">Mentions légales</a><a href="pages/cgv.html">CGV</a><a href="pages/confidentialite.html">Confidentialité</a></div><p>Ouest Gems Export SAS · France</p></footer>
-  <script src="assets/js/main.js?v=20261030-2" defer></script>
+<div id="emeraudes" class="world" hidden>
+  <div class="hero em"><div class="scene"><div class="beams"></div></div>
+    <section class="wh">
+      <div>
+        <h1>Des pierres choisies une à une</h1>
+        <p class="lead">Émeraudes naturelles de Swat, documentées et traçables. Chaque pierre est présentée avec son dossier, sur demande.</p>
+        <a class="btn solid" href="#pierres" data-scroll>Voir la sélection</a>
+      </div>
+      <div class="stage" data-tilt><img src="assets/img/oge-004-1.jpg" alt="Émeraude naturelle OGE-004, 1,41 carat"></div>
+    </section>
+  </div>
+  <section class="sec" id="pierres">
+    <h2>La sélection actuelle</h2>
+    <p>Ouvrez une fiche pour voir la pierre en détail, ou demandez son dossier complet.</p>
+    <div class="grid" id="stones"></div>
+    <p style="margin-top:2.5rem"><a class="btn" href="collection.html">Voir les 13 émeraudes</a></p>
+  </section>
+  <section class="band"><h2>Comprendre l’origine, la couleur et les traitements d’une émeraude.</h2><a class="btn" href="guides/guide-achat-emeraude.html">Lire le guide d’achat</a></section>
+</div>
+</main>
+
+<footer>
+  <span>Ouest Gems Export SAS · France</span>
+  <nav><a href="pages/mentions-legales.html">Mentions légales</a><a href="pages/cgv.html">CGV</a><a href="pages/confidentialite.html">Confidentialité</a><a href="en/index.html">EN</a></nav>
+</footer>
+
+<div id="veil"></div>
+<aside id="cart" aria-hidden="true" aria-label="Votre sélection">
+  <button class="x" id="cartX" aria-label="Fermer">×</button>
+  <div class="vis2" id="cVis"></div>
+  <h3 id="cName"></h3>
+  <p id="cPrice" class="price"></p>
+  <a id="cPay" class="btn solid" style="text-align:center" href="#" aria-disabled="true">Paiement bientôt disponible</a>
+  <small>Paiement sécurisé par Stripe. Livraison offerte en France.</small>
+</aside>
+
+<script>
+/* ====== À MODIFIER : bijoux, pierres et liens Stripe ====== */
+const JEWELS = [
+ {id:"main", name:"Pendentif Main d’émeraude", meta:"Or ciselé, émeraude naturelle de Swat", price:490, img:"assets/produits/main.jpg", sym:"hand", vb:"0 0 100 150", stripe:"https://buy.stripe.com/REMPLACER-main"},
+ {id:"cage", name:"Collier cage spirale", meta:"Argent, émeraude libre dans la cage", price:320, img:"assets/produits/cage.jpg", sym:"cage", vb:"0 0 100 140", stripe:"https://buy.stripe.com/REMPLACER-cage"},
+ {id:"goutte", name:"Pendentif Émeraude filée", meta:"Fil d’or, émeraude taille émeraude", price:410, img:"assets/produits/goutte.jpg", sym:"drop", vb:"0 0 80 150", stripe:"https://buy.stripe.com/REMPLACER-goutte"},
+ {id:"branche", name:"Bague Branche", meta:"Or, monture en branches, émeraude sertie", price:540, img:"assets/produits/branche.jpg", sym:"twig", vb:"0 0 120 130", stripe:"https://buy.stripe.com/REMPLACER-branche"},
+ {id:"griffes", name:"Bague Griffes", meta:"Argent martelé, émeraude sertie, taille réglable", price:380, img:"assets/produits/griffes.jpg", sym:"claw", vb:"0 0 120 130", stripe:"https://buy.stripe.com/REMPLACER-griffes"}
+];
+const STONES = [
+ {id:"oge-004", ct:"1,41 ct", img:"assets/img/oge-004-1.jpg"},
+ {id:"oge-007", ct:"1,51 ct", img:"assets/img/oge-007-1.jpg"},
+ {id:"oge-001", ct:"1,85 ct", img:"assets/img/oge-001-1.jpg"}
+];
+const MAIL = "contact@ouestgems.com";
+/* ========================================================= */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const eur=n=>n.toLocaleString("fr-FR")+" €";
+const svgOf=j=>`<svg viewBox="${j.vb}"><use href="#${j.sym}"/></svg>`;
+const visual=j=>j.img?`<img src="${j.img}" alt="${j.name}" loading="lazy" onerror="fallback(this,'${j.id}')">`:svgOf(j);
+function fallback(el,id){const j=JEWELS.find(x=>x.id===id);el.parentElement.innerHTML=svgOf(j)}
+$("#shop").innerHTML=JEWELS.map(j=>`<article class="card"><div class="ph" data-tilt>${visual(j)}</div><h3>${j.name}</h3><p class="meta">${j.meta}</p><div class="row"><b>${eur(j.price)}</b><button class="btn" data-buy="${j.id}">Acheter</button></div></article>`).join("");
+$("#stones").innerHTML=STONES.map(s=>`<article class="card"><a href="produits/${s.id}.html"><div class="ph" data-tilt><img src="${s.img}" alt="Émeraude naturelle ${s.id.toUpperCase()}, ${s.ct}" loading="lazy"></div><h3>${s.id.toUpperCase()}</h3></a><p class="meta">${s.ct} · Swat</p><div class="row"><span></span><a class="btn" href="mailto:${MAIL}?subject=Dossier%20${s.id.toUpperCase()}">Demander le dossier</a></div></article>`).join("");
+
+/* lampe, parallaxe, inclinaison 3D */
+addEventListener("pointermove",e=>{const d=document.documentElement.style;d.setProperty("--mx",e.clientX+"px");d.setProperty("--my",e.clientY+"px");
+ d.setProperty("--px",(e.clientX/innerWidth-.5).toFixed(2));d.setProperty("--py",(e.clientY/innerHeight-.5).toFixed(2));
+ const t=e.target.closest&&e.target.closest("[data-tilt]");if(t){const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;t.style.setProperty("--ry",x*14+"deg");t.style.setProperty("--rx",-y*14+"deg")}});
+document.addEventListener("pointerout",e=>{const t=e.target.closest&&e.target.closest("[data-tilt]");if(t){t.style.removeProperty("--ry");t.style.removeProperty("--rx")}});
+
+/* les deux portes s'entrouvrent l'une après l'autre : on devine la lumière */
+setTimeout(()=>$$(".door")[0].classList.add("tease"),2200);
+setTimeout(()=>$$(".door")[1].classList.add("tease"),2700);
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add("vis"),(e.target.dataset.i||0)*120);io.unobserve(e.target)}}),{threshold:.15});
+const views={home:$("#home"),bijoux:$("#bijoux"),emeraudes:$("#emeraudes")};
+function show(w){Object.entries(views).forEach(([k,v])=>{v.hidden=k!==w;v.classList.remove("play")});document.body.dataset.w=w;
+ $("#n-b").classList.toggle("on",w==="bijoux");$("#n-e").classList.toggle("on",w==="emeraudes");scrollTo(0,0);
+ $$(".door").forEach(d=>d.classList.remove("in","out"));
+ if(w!=="home"){views[w].offsetWidth;views[w].classList.add("play");$$(".card",views[w]).forEach((c,i)=>{c.dataset.i=i%4;c.classList.remove("vis");io.observe(c)})}}
+
+/* traversée : la porte s'ouvre, la caméra passe à travers, la lumière inonde l'écran */
+function go(w,door){
+ if(document.body.dataset.w===w)return;
+ history.pushState(null,"",w==="home"?location.pathname:"#"+w);
+ if(!door||matchMedia("(prefers-reduced-motion:reduce)").matches){show(w);return}
+ const ov=$("#ov");ov.style.setProperty("--c",getComputedStyle(door).getPropertyValue("--c"));
+ door.classList.add("in");$$(".door").forEach(d=>d!==door&&d.classList.add("out"));
+ setTimeout(()=>{ov.style.transition="opacity .7s";ov.style.opacity=1},900);
+ setTimeout(()=>{show(w);ov.style.transition="opacity 1.2s";ov.style.opacity=0},1700);
+}
+document.addEventListener("click",e=>{
+ const g=e.target.closest("[data-go]");
+ if(g){e.preventDefault();go(g.dataset.go,g.classList.contains("door")?g:null)}
+ const s=e.target.closest("[data-scroll]");if(s){e.preventDefault();$(s.getAttribute("href")).scrollIntoView({behavior:"smooth"})}
+ const b=e.target.closest("[data-buy]");if(b)openCart(b.dataset.buy);
+});
+addEventListener("popstate",()=>show(location.hash.slice(1)||"home"));
+show(["bijoux","emeraudes"].includes(location.hash.slice(1))?location.hash.slice(1):"home");
+
+/* panier : Acheter puis Payer en ligne */
+function openCart(id){const j=JEWELS.find(x=>x.id===id);if(!j)return;
+ $("#cVis").innerHTML=visual(j);
+ const pay=$("#cPay"),ready=j.stripe&&!j.stripe.includes("REMPLACER-");
+ $("#cName").textContent=j.name;$("#cPrice").textContent=eur(j.price);
+ pay.href=ready?j.stripe:"#";pay.textContent=ready?"Payer en ligne":"Paiement bientôt disponible";
+ pay.setAttribute("aria-disabled",String(!ready));pay.onclick=ready?null:e=>e.preventDefault();
+ $("#cart").classList.add("open");$("#cart").setAttribute("aria-hidden","false");$("#veil").classList.add("on");$("#cPay").focus()}
+function closeCart(){$("#cart").classList.remove("open");$("#cart").setAttribute("aria-hidden","true");$("#veil").classList.remove("on")}
+$("#cartX").onclick=$("#veil").onclick=closeCart;
+$("#cartBtn").onclick=()=>openCart(JEWELS[0].id);
+addEventListener("keydown",e=>{if(e.key==="Escape")closeCart()});
+</script>
 </body>
 </html>
