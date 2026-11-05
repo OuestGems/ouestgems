@@ -1,0 +1,9 @@
+html{overflow-x:hidden}
+@media(max-width:600px){
+  .site-header{grid-template-columns:48px minmax(0,1fr) 48px}
+  .header-actions{width:48px;justify-content:flex-end}
+  .bag-button{width:44px;font-size:0;padding:8px 0}
+  .bag-button span{font-size:8px;margin:0}
+  .announcement{white-space:nowrap;overflow:hidden}
+  .hero-copy>p:not(.eyebrow){max-width:330px}
+}
