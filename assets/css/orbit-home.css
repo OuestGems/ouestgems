@@ -95,32 +95,30 @@ button { color: inherit; }
 .story-progress span { display: block; width: 1px; height: 0; background: var(--acid); }
 .torn-edge { position: absolute; left: 0; right: 0; bottom: -1px; height: 74px; background: var(--paper); clip-path: polygon(0 67%, 3% 53%, 7% 68%, 11% 48%, 15% 64%, 20% 42%, 25% 60%, 30% 45%, 35% 65%, 40% 40%, 45% 58%, 50% 35%, 55% 58%, 60% 43%, 66% 62%, 72% 46%, 78% 67%, 84% 49%, 90% 65%, 95% 48%, 100% 58%, 100% 100%, 0 100%); z-index: 6; }
 
-.style-orbit { min-height: 140vh; background: var(--paper); position: relative; overflow: hidden; padding: 110px var(--pad) 90px; }
-.orbit-stage { position: relative; width: 100%; height: min(1120px, 118vh); min-height: 820px; display: grid; place-items: center; }
-.orbit-line { position: absolute; width: min(72vw, 1040px); aspect-ratio: 1; border: 1px solid rgba(17,17,17,.14); border-radius: 50%; }
+.style-orbit { min-height: 105vh; background: var(--paper); position: relative; overflow: hidden; padding: 90px var(--pad) 70px; }
+.orbit-stage { position: relative; width: 100%; height: min(800px, 88vh); min-height: 650px; display: grid; place-items: center; }
+.orbit-line { position: absolute; width: min(58vw, 780px); aspect-ratio: 1; border: 1px solid rgba(17,17,17,.14); border-radius: 50%; }
 .orbit-line::before, .orbit-line::after { content: ""; position: absolute; inset: 10%; border: 1px dashed rgba(17,17,17,.08); border-radius: 50%; }
 .orbit-line::after { inset: 45%; background: var(--acid); border: 0; opacity: .35; }
-.orbit-center { position: relative; z-index: 3; width: min(520px, 48vw); text-align: center; pointer-events: none; }
-.orbit-center h2 { margin: 18px 0 24px; font-size: clamp(74px, 8.7vw, 136px); letter-spacing: -.075em; line-height: .76; font-weight: 500; text-transform: none; }
+.orbit-center { position: relative; z-index: 3; width: min(450px, 42vw); text-align: center; pointer-events: none; }
+.orbit-center h2 { margin: 18px 0 24px; font-size: clamp(68px, 7.5vw, 110px); letter-spacing: -.075em; line-height: .76; font-weight: 500; text-transform: none; }
 .orbit-center > p:last-child { max-width: 360px; margin: auto; font-size: 13px; line-height: 1.6; color: rgba(17,17,17,.58); }
-.orbit-rotator { --radius: clamp(250px, 34vw, 520px); position: absolute; z-index: 4; left: 50%; top: 50%; width: 0; height: 0; animation: orbitSpin 48s linear infinite; }
-.orbit-jewel { --jewel-size: clamp(138px, 15vw, 218px); position: absolute; left: 0; top: 0; width: var(--jewel-size); height: var(--jewel-size); margin: calc(var(--jewel-size) / -2); padding: 0; border: 0; background: transparent; cursor: pointer; transform: rotate(var(--angle)) translateX(var(--radius)); transform-origin: center; }
-.orbit-jewel-inner { position: relative; display: block; width: 100%; height: 100%; animation: orbitCounterSpin 48s linear infinite; transform: rotate(var(--counter)); }
+.orbit-rotator { --radius: clamp(195px, 27vw, 370px); position: absolute; z-index: 4; left: 50%; top: 50%; width: 0; height: 0; animation: orbitSpin 72s linear infinite; }
+.orbit-jewel { --jewel-size: clamp(115px, 12vw, 168px); position: absolute; left: 0; top: 0; width: var(--jewel-size); height: var(--jewel-size); margin: calc(var(--jewel-size) / -2); padding: 0; border: 0; background: transparent; cursor: pointer; transform: rotate(var(--angle)) translateX(var(--radius)); transform-origin: center; }
+.orbit-jewel-inner { position: relative; display: block; width: 100%; height: 100%; animation: orbitCounterSpin 72s linear infinite; transform: rotate(var(--counter)); }
 .orbit-jewel img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 22px 60px rgba(10,32,24,.16); transition: transform .45s cubic-bezier(.22,.61,.36,1), box-shadow .45s; }
 .orbit-jewel:hover img, .orbit-jewel:focus-visible img { transform: scale(1.08); box-shadow: 0 28px 75px rgba(6,61,49,.28); }
 .orbit-jewel:focus-visible { outline: 1px solid var(--emerald); outline-offset: 12px; border-radius: 50%; }
-.orbit-number { position: absolute; z-index: 2; left: -13px; top: 10px; font-family: "Instrument Serif"; font-size: 17px; }
 .orbit-meta { position: absolute; z-index: 2; left: 50%; bottom: -38px; min-width: 150px; transform: translateX(-50%); display: grid; gap: 4px; text-align: center; }
 .orbit-meta strong { font-family: "Instrument Serif"; font-size: 18px; font-weight: 400; white-space: nowrap; }
 .orbit-meta small { font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
-.orbit-stage:hover .orbit-rotator, .orbit-stage:hover .orbit-jewel-inner { animation-play-state: paused; }
 .orbit-footnote { display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 18px; text-transform: uppercase; letter-spacing: .14em; font-size: 9px; }
 
 .maison { background: var(--emerald); color: white; padding: 130px var(--pad); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .maison h2, .newsletter h2 { font-size: clamp(58px, 7vw, 100px); line-height: .85; letter-spacing: -.055em; margin: 20px 0; font-weight: 500; }
 .maison h2 em, .newsletter h2 em { font-family: "Instrument Serif"; font-weight: 400; }
 .maison-intro { max-width: 480px; align-self: end; font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.72); }
-.process-gallery { grid-column: 1 / -1; min-height: 800px; display: grid; grid-template-columns: repeat(12,1fr); grid-template-rows: repeat(2, minmax(340px, 1fr)); gap: 12px; }
+.process-gallery { grid-column: 1 / -1; min-height: 0; display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: 280px; gap: 12px; }
 .process-card { position: relative; overflow: hidden; background: #092d25; }
 .process-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,13,10,.9), rgba(0,13,10,.05) 70%); }
 .process-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.22,.61,.36,1), filter .6s; }
@@ -129,10 +127,7 @@ button { color: inherit; }
 .process-card span { font-size: 9px; text-transform: uppercase; letter-spacing: .17em; color: var(--acid); }
 .process-card h3 { margin: 8px 0 6px; font-family: "Instrument Serif"; font-size: clamp(30px, 3vw, 50px); font-weight: 400; }
 .process-card p { max-width: 420px; margin: 0; font-size: 11px; line-height: 1.5; color: rgba(255,255,255,.7); }
-.process-featured { grid-column: 1 / 7; grid-row: 1 / 3; }
-.process-exam { grid-column: 7 / 13; grid-row: 1; }
-.process-cut { grid-column: 7 / 10; grid-row: 2; }
-.process-jewel { grid-column: 10 / 13; grid-row: 2; }
+.process-featured, .process-exam, .process-cut, .process-jewel { grid-column: auto; grid-row: auto; }
 .maison-link { grid-column: 1 / -1; justify-self: end; display: inline-flex; gap: 14px; align-items: center; border-bottom: 1px solid rgba(255,255,255,.5); padding-bottom: 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .maison-link span { color: var(--acid); font-size: 18px; }
 
@@ -183,12 +178,15 @@ footer nav { justify-self: end; display: flex; gap: 24px; font-size: 11px; }
   .hero-note { display: none; }
   .hero-stamp { right: 8%; top: 24%; }
   .scribble { display: none; }
-  .story-heading { top: 10%; }
-  .product-fan { overflow-x: auto; display: flex; gap: 14px; padding: 0 22px 15px; bottom: 5%; align-items: end; scroll-snap-type: x mandatory; }
-  .product-card { position: relative; min-width: 210px; left: auto; top: auto; transform: none !important; opacity: 1 !important; scroll-snap-align: center; }
-  .envelope { top: 48%; }
+  .collection-story { height: auto; padding: 100px 0 95px; }
+  .story-sticky { position: relative; top: auto; height: auto; min-height: 0; overflow: visible; display: block; }
+  .story-heading { position: relative; top: auto; margin: 0 auto 55px; }
+  .envelope { display: none; }
+  .product-fan { position: relative; left: auto; right: auto; bottom: auto; height: auto; overflow-x: auto; display: flex; gap: 14px; padding: 0 22px 28px; align-items: stretch; scroll-snap-type: x mandatory; }
+  .product-card { position: relative; width: min(70vw,260px); flex: 0 0 min(70vw,260px); min-width: 0; left: auto; top: auto; transform: none !important; opacity: 1 !important; scroll-snap-align: center; }
+  .story-progress { display: none; }
   .maison { grid-template-columns: 1fr; gap: 20px; }
-  .process-gallery { grid-template-rows: repeat(2, minmax(300px, 1fr)); min-height: 680px; }
+  .process-gallery { grid-template-columns: repeat(2,1fr); grid-template-rows: repeat(2,240px); min-height: 0; }
 }
 
 @media (max-width: 600px) {
@@ -205,14 +203,8 @@ footer nav { justify-self: end; display: flex; gap: 24px; font-size: 11px; }
   .hero-copy h1 { font-size: 54px; line-height: .87; margin-top: 26px; }
   .hero-cta { align-items: flex-start; flex-direction: column; gap: 18px; }
   .hero-stamp { top: 58%; right: 6%; width: 80px; height: 80px; }
-  .collection-story { height: 300vh; }
-  .story-sticky { min-height: 640px; }
-  .story-heading { top: 8%; }
   .story-heading h2 { font-size: 54px; }
   .story-heading p:last-child { font-size: 11px; max-width: 300px; }
-  .envelope { width: 90vw; top: 48%; }
-  .product-fan { height: 330px; bottom: 2%; }
-  .story-progress { display: none; }
   .style-orbit { min-height: auto; padding: 100px 0 80px; }
   .orbit-stage { display: block; height: auto; min-height: 0; }
   .orbit-line { display: none; }
@@ -226,9 +218,8 @@ footer nav { justify-self: end; display: flex; gap: 24px; font-size: 11px; }
   .orbit-footnote { margin: 25px var(--pad) 0; }
   .maison, .newsletter { padding-top: 90px; padding-bottom: 90px; }
   .maison h2, .newsletter h2 { font-size: 53px; }
-  .process-gallery { display: grid; grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; gap: 10px; }
-  .process-card, .process-featured, .process-exam, .process-cut, .process-jewel { grid-column: 1; grid-row: auto; min-height: 390px; }
-  .process-featured { min-height: 540px; }
+  .process-gallery { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory; }
+  .process-card, .process-featured, .process-exam, .process-cut, .process-jewel { flex: 0 0 min(76vw,300px); min-height: 320px; scroll-snap-align: center; }
   .maison-link { justify-self: start; margin-top: 20px; }
   footer { grid-template-columns: 1fr; }
   footer nav { justify-self: start; flex-wrap: wrap; }

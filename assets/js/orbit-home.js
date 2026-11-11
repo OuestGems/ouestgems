@@ -136,6 +136,17 @@ function updateStory() {
       card.style.opacity = clamp(fan * 1.8);
       card.style.transform = `translate(${x}px, ${fanY}px) rotate(${rotation}deg) scale(${scale})`;
     });
+  } else {
+    heading.style.removeProperty('opacity');
+    heading.style.removeProperty('filter');
+    heading.style.removeProperty('transform');
+    flap.style.removeProperty('transform');
+    envelope.style.removeProperty('transform');
+    envelope.style.removeProperty('opacity');
+    cards.forEach((card) => {
+      card.style.removeProperty('opacity');
+      card.style.removeProperty('transform');
+    });
   }
 }
 
