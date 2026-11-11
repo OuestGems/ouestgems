@@ -1,77 +1,181 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Ouest Gems | Bijoux d’exception sertis d’émeraudes</title>
-  <meta name="description" content="Découvrez les bijoux Ouest Gems, des créations singulières serties d’émeraudes naturelles sélectionnées à la source.">
-  <meta property="og:title" content="Ouest Gems | Bijoux d’exception">
-  <meta property="og:description" content="Des créations singulières, façonnées autour d’émeraudes naturelles de Swat.">
-  <meta property="og:image" content="https://ouestgems.com/assets/produits/main.jpg">
-  <meta name="theme-color" content="#f5f2eb">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/shop.css?v=20261105">
-  <link rel="stylesheet" href="assets/css/mobile-fix.css?v=20261105">
-</head>
-<body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
-  <div class="announcement">Livraison offerte en France · Paiement sécurisé · Émeraudes naturelles sélectionnées à la source</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ouest Gems — Émeraudes naturelles et créations singulières." />
+    <meta name="theme-color" content="#eeeae3" />
+    <meta property="og:title" content="Ouest Gems — Des pierres choisies pour écrire votre histoire" />
+    <meta property="og:description" content="Joaillerie contemporaine et émeraudes naturelles sélectionnées à la source." />
+    <meta property="og:image" content="https://ouestgems.com/assets/produits/main.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/orbit-home.css?v=20261111" />
+    <title>Ouest Gems — Maison française</title>
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="announcement">Livraison offerte en France · Émeraudes naturelles sélectionnées à la source</div>
 
-  <header class="site-header">
-    <button class="icon-button menu-button" type="button" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false"><span></span><span></span></button>
-    <a class="wordmark" href="index.html">Ouest Gems<small>Maison française</small></a>
-    <div class="header-actions"><a href="en/index.html" lang="en">EN</a><button class="icon-button bag-button" type="button" aria-label="Ouvrir votre sélection" aria-controls="product-panel">Panier <span>0</span></button></div>
-  </header>
+    <header class="site-header" data-header>
+      <a href="#collection" class="desktop-link">Créations</a>
+      <button class="mobile-menu-trigger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-open>
+        <span></span><span></span>
+      </button>
+      <a class="brand" href="#top" aria-label="Ouest Gems, accueil">
+        <strong>OUEST GEMS</strong>
+        <small>MAISON FRANÇAISE</small>
+      </a>
+      <nav class="header-actions" aria-label="Navigation principale">
+        <a href="pages/la-maison.html" class="desktop-link">La Maison</a>
+        <button type="button" class="text-button desktop-link" data-favorites-open>Favoris <span data-favorites-count>0</span></button>
+        <button type="button" class="text-button" data-cart-open>Panier (<span data-cart-count>0</span>)</button>
+        <button class="menu-lines desktop-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-menu-open><span></span><span></span></button>
+      </nav>
+    </header>
 
-  <div class="scrim" hidden></div>
-  <aside class="side-menu" id="menu" aria-hidden="true">
-    <div class="menu-top"><span>Menu</span><button class="close-button" type="button" aria-label="Fermer le menu">×</button></div>
-    <nav aria-label="Navigation principale">
-      <p>Nos créations</p>
-      <a href="#nouveautes">Nouveautés</a><a href="#colliers">Colliers & pendentifs</a><a href="#bagues">Bagues</a><a href="#toutes">Toutes les créations</a>
-      <p>La Maison</p>
-      <a href="#origine">De la source à l’écrin</a><a href="collection.html">Émeraudes de collection</a><a href="pages/la-maison.html">Notre Maison</a><a href="guides/guide-achat-emeraude.html">Le guide de l’émeraude</a>
-    </nav>
-    <div class="menu-foot"><a href="mailto:ouestgems.export@gmail.com">Nous contacter</a><span>France · EUR €</span></div>
-  </aside>
+    <aside class="menu-panel" aria-hidden="true" data-menu>
+      <button class="panel-close" type="button" aria-label="Fermer le menu" data-panel-close>×</button>
+      <p class="eyebrow">Ouest Gems · Navigation</p>
+      <nav>
+        <a href="#collection">Nouveautés <span>01</span></a>
+        <a href="bijoux.html#colliers">Colliers & pendentifs <span>02</span></a>
+        <a href="bijoux.html#bagues">Bagues <span>03</span></a>
+        <a href="pages/la-maison.html">De la source à l’écrin <span>04</span></a>
+        <a href="guides/guide-achat-emeraude.html">Guide de l’émeraude <span>05</span></a>
+      </nav>
+      <div class="menu-meta"><span>France · EUR €</span><a href="en/index.html" lang="en">English</a></div>
+    </aside>
 
-  <main id="main">
-    <section class="hero" id="nouveautes">
-      <img src="assets/produits/main.jpg" alt="Pendentif Main d’émeraude Ouest Gems sur velours vert">
-      <div class="hero-shade"></div>
-      <div class="hero-copy"><p class="eyebrow">La pièce manifeste</p><h1>La Main<br><em>d’émeraude</em></h1><p>Un talisman sculptural façonné autour d’une émeraude naturelle de Swat.</p><div><button class="button light" data-product="main">Découvrir la pièce</button><a class="text-link light-link" href="#toutes">Voir les créations</a></div></div>
-      <a class="scroll-cue" href="#toutes">Découvrir</a>
-    </section>
+    <main id="top">
+      <section class="hero light-section" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/produits/main.jpg" alt="" />
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow light">Joaillerie contemporaine · Émeraudes de Swat</p>
+          <h1 id="hero-title">Des pierres<br />choisies pour écrire<br /><em class="marker">votre</em> histoire</h1>
+          <div class="hero-cta">
+            <a class="button button-light" href="#collection">Découvrir les pièces</a>
+            <a class="inline-link light" href="#maison">Notre démarche <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-note">
+          <span class="note-number">(01)</span>
+          <p class="eyebrow light">LA MAIN D’ÉMERAUDE</p>
+          <p>Un talisman sculptural façonné autour d’une émeraude naturelle de Swat.</p>
+        </div>
+        <div class="hero-stamp" aria-hidden="true">PIÈCE<br /><i>manifeste</i></div>
+        <div class="scribble" aria-hidden="true">↗</div>
+        <div class="scroll-cue" aria-hidden="true"><span></span>Défiler</div>
+      </section>
 
-    <nav class="category-strip" aria-label="Catégories"><a href="#colliers">Colliers</a><a href="#bagues">Bagues</a><a href="#toutes">Pendentifs</a><a href="#toutes">Pièces mixtes</a><a href="collection.html">Émeraudes</a></nav>
+      <section class="collection-story dark-section" id="collection" aria-labelledby="collection-title">
+        <div class="story-sticky">
+          <div class="story-heading" data-story-heading>
+            <p class="eyebrow">Série limitée · Cinq pièces</p>
+            <h2 id="collection-title">Notre <em class="marker">nouvelle</em><br />Collection</h2>
+            <p>Des créations façonnées autour d’émeraudes naturelles choisies pour leur couleur, leur caractère et leur histoire.</p>
+          </div>
 
-    <section class="intro"><p class="eyebrow">Ouest Gems · Joaillerie contemporaine</p><h2>La pierre avant tout.<br><em>Le bijou pour toujours.</em></h2><p>Chaque création naît d’une émeraude choisie pour sa couleur et son caractère. Des pièces franches et précieuses, produites en séries limitées.</p></section>
+          <div class="envelope" data-envelope aria-hidden="true">
+            <div class="envelope-back"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-front"></div>
+            <span>OUVRIR LA COLLECTION</span>
+          </div>
 
-    <section class="products" id="toutes" aria-labelledby="products-title">
-      <div class="section-heading"><div><p class="eyebrow">Nos coups de cœur</p><h2 id="products-title">Les créations</h2></div><span>5 pièces</span></div>
-      <div class="product-grid" id="product-grid"></div>
-    </section>
+          <div class="product-fan" data-product-fan>
+            <article class="product-card" style="--i: -2" data-product="pendentif-main">
+              <button class="card-image" type="button" aria-label="Découvrir le Pendentif Main d’émeraude"><img src="assets/produits/main.jpg" alt="Pendentif Main d’émeraude" /></button>
+              <div><small>Pièce manifeste</small><h3>Pendentif Main d’émeraude</h3><p>490 €</p></div>
+              <button class="favorite" type="button" aria-label="Ajouter aux favoris">♡</button>
+            </article>
+            <article class="product-card" style="--i: -1" data-product="collier-cage">
+              <button class="card-image" type="button" aria-label="Découvrir le Collier Cage spirale"><img src="assets/produits/cage.jpg" alt="Collier Cage spirale" /></button>
+              <div><small>Collier</small><h3>Collier Cage spirale</h3><p>320 €</p></div>
+              <button class="favorite" type="button" aria-label="Ajouter aux favoris">♡</button>
+            </article>
+            <article class="product-card" style="--i: 0" data-product="pendentif-file">
+              <button class="card-image" type="button" aria-label="Découvrir le Pendentif Émeraude filée"><img src="assets/produits/goutte.jpg" alt="Pendentif Émeraude filée" /></button>
+              <div><small>Pendentif</small><h3>Pendentif Émeraude filée</h3><p>410 €</p></div>
+              <button class="favorite" type="button" aria-label="Ajouter aux favoris">♡</button>
+            </article>
+            <article class="product-card" style="--i: 1" data-product="bague-branche">
+              <button class="card-image" type="button" aria-label="Découvrir la Bague Branche"><img src="assets/produits/branche.jpg" alt="Bague Branche" /></button>
+              <div><small>Bague</small><h3>Bague Branche</h3><p>540 €</p></div>
+              <button class="favorite" type="button" aria-label="Ajouter aux favoris">♡</button>
+            </article>
+            <article class="product-card" style="--i: 2" data-product="bague-griffes">
+              <button class="card-image" type="button" aria-label="Découvrir la Bague Griffes"><img src="assets/produits/griffes.jpg" alt="Bague Griffes" /></button>
+              <div><small>Bague</small><h3>Bague Griffes</h3><p>380 €</p></div>
+              <button class="favorite" type="button" aria-label="Ajouter aux favoris">♡</button>
+            </article>
+          </div>
+          <div class="story-progress" aria-hidden="true"><span data-story-progress></span></div>
+        </div>
+        <div class="torn-edge" aria-hidden="true"></div>
+      </section>
 
-    <section class="editorial" id="origine">
-      <div class="editorial-image"><img src="assets/img/terrain-examen.jpg" alt="Examen d’une émeraude naturelle à la source"></div>
-      <div class="editorial-copy"><p class="eyebrow">L’origine au cœur du bijou</p><h2>De la source<br><em>à votre écrin</em></h2><p>Nous connaissons nos pierres avant qu’elles ne deviennent bijoux. Sélection, examen, taille et certification : chaque étape est suivie et documentée pour préserver l’identité de l’émeraude.</p><a class="button dark" href="pages/la-maison.html">Découvrir notre démarche</a></div>
-    </section>
+      <section class="match light-section" aria-labelledby="match-title">
+        <div class="match-title-wrap">
+          <p class="eyebrow">Une pierre. Une présence.</p>
+          <h2 id="match-title">Trouvez votre<br />pièce <em class="marker">singulière</em></h2>
+        </div>
+        <figure class="floating-jewel jewel-one" data-float="0.12"><span>(01)</span><img src="assets/produits/branche.jpg" alt="Bague contemporaine sertie d’une émeraude" /></figure>
+        <figure class="floating-jewel jewel-two" data-float="-0.08"><span>(02)</span><img src="assets/produits/goutte.jpg" alt="Pendentif en or et émeraude" /></figure>
+        <figure class="floating-jewel jewel-three" data-float="0.06"><span>(03)</span><img src="assets/produits/griffes.jpg" alt="Bague en or et émeraude rectangulaire" /></figure>
+        <div class="match-copy">
+          <div class="eye" aria-hidden="true">◉</div>
+          <p>Chaque création naît d’une émeraude choisie pour sa couleur et son caractère. De la vallée de Swat jusqu’à votre écrin, chaque pierre est sélectionnée, examinée et accompagnée avec exigence.</p>
+          <a class="inline-link" href="pages/la-maison.html">Découvrir notre démarche <span>↗</span></a>
+        </div>
+      </section>
 
-    <section class="emeralds">
-      <div class="emeralds-copy"><p class="eyebrow">Pierres de collection</p><h2>Choisir d’abord<br><em>son émeraude</em></h2><p>Pour un projet sur mesure ou pour une pierre à conserver, découvrez notre sélection d’émeraudes naturelles accompagnées de leur dossier gemmologique.</p><a class="text-link" href="collection.html">Explorer les émeraudes →</a></div>
-      <div class="stone-row"><a href="produits/oge-004.html"><img src="assets/img/oge-004-1.jpg" alt="Émeraude OGE-004"><span>OGE-004 · 1,41 ct</span></a><a href="produits/oge-007.html"><img src="assets/img/oge-007-1.jpg" alt="Émeraude OGE-007"><span>OGE-007 · 1,51 ct</span></a><a href="produits/oge-001.html"><img src="assets/img/oge-001-1.jpg" alt="Émeraude OGE-001"><span>OGE-001 · 1,85 ct</span></a></div>
-    </section>
+      <section class="maison" id="maison" aria-labelledby="maison-title">
+        <div>
+          <p class="eyebrow">La pierre avant tout</p>
+          <h2 id="maison-title">De la source<br /><em>à votre écrin</em></h2>
+        </div>
+        <p class="maison-intro">Nous connaissons nos pierres avant qu’elles ne deviennent bijoux. Sélection, examen, taille et certification : chaque étape est suivie et documentée.</p>
+        <ol class="steps">
+          <li><span>01</span><h3>Sélection</h3><p>Des émeraudes choisies directement à la source au Pakistan.</p></li>
+          <li><span>02</span><h3>Examen</h3><p>Couleur, pureté, taille et caractère étudiés avec attention.</p></li>
+          <li><span>03</span><h3>Création</h3><p>Des bijoux produits en séries limitées par des ateliers partenaires.</p></li>
+          <li><span>04</span><h3>Transmission</h3><p>Une pièce préparée avec soin et expédiée depuis la France.</p></li>
+        </ol>
+      </section>
 
-    <section class="services" aria-label="Nos services"><div><b>01</b><h3>Livraison soignée</h3><p>Expédition assurée depuis la France.</p></div><div><b>02</b><h3>Émeraudes naturelles</h3><p>Origine et dossier documentés.</p></div><div><b>03</b><h3>Accompagnement</h3><p>Une réponse personnelle avant et après l’achat.</p></div></section>
+      <section class="newsletter" id="contact">
+        <p class="eyebrow">Le Cercle Ouest Gems</p>
+        <h2>Entrez dans les coulisses<br /><em>de la Maison.</em></h2>
+        <p>Avant-premières, nouvelles créations et histoires de pierres.</p>
+        <form action="https://formspree.io/f/xwvgavdj" method="post"><label for="email">Votre adresse e-mail</label><div><input id="email" name="email" type="email" required placeholder="vous@exemple.fr" /><button type="submit">S’inscrire ↗</button></div></form>
+      </section>
+    </main>
 
-    <section class="newsletter" id="cercle"><p class="eyebrow">Le Cercle Ouest Gems</p><h2>Entrez dans les coulisses<br><em>de la Maison.</em></h2><p>Avant-premières, nouvelles créations et histoires de pierres.</p><form action="https://formspree.io/f/xwvgavdj" method="post"><label class="sr-only" for="email">Votre adresse e-mail</label><input id="email" name="email" type="email" placeholder="Votre adresse e-mail" required><button type="submit">S’inscrire</button></form></section>
-  </main>
+    <footer>
+      <a class="footer-brand" href="#top">OUEST GEMS</a>
+      <p>Émeraudes naturelles et créations singulières.</p>
+      <nav><a href="pages/la-maison.html">La Maison</a><a href="collection.html">Les émeraudes</a><a href="pages/cgv.html">Conditions de vente</a><a href="pages/mentions-legales.html">Mentions légales</a></nav>
+      <p>Ouest Gems Export SAS · France</p>
+    </footer>
 
-  <footer><div><a class="footer-brand" href="index.html">Ouest Gems</a><p>Émeraudes naturelles et créations singulières.</p></div><nav><a href="pages/la-maison.html">La Maison</a><a href="collection.html">Les émeraudes</a><a href="pages/cgv.html">Conditions de vente</a><a href="pages/mentions-legales.html">Mentions légales</a></nav><div><a href="mailto:ouestgems.export@gmail.com">ouestgems.export@gmail.com</a><p>Ouest Gems Export SAS · France</p></div></footer>
+    <dialog class="product-dialog" data-product-dialog>
+      <button class="dialog-close" type="button" aria-label="Fermer">×</button>
+      <div class="dialog-media"><img data-dialog-image alt="" /></div>
+      <div class="dialog-copy"><p class="eyebrow" data-dialog-category></p><h2 data-dialog-name></h2><p data-dialog-description></p><strong data-dialog-price></strong><button class="button button-dark" type="button" data-add-cart>Ajouter à la sélection</button><a href="mailto:ouestgems.export@gmail.com" class="inline-link">Demander le dossier complet ↗</a></div>
+    </dialog>
 
-  <aside class="product-panel" id="product-panel" aria-hidden="true" aria-labelledby="panel-title"><button class="close-button panel-close" type="button" aria-label="Fermer">×</button><div class="panel-image"><img src="" alt=""></div><div class="panel-copy"><p class="eyebrow panel-category"></p><h2 id="panel-title"></h2><p class="panel-meta"></p><p class="panel-price"></p><p class="panel-note">Chaque pièce est préparée avec soin dans son écrin Ouest Gems.</p><a class="button dark panel-buy" href="#">Commander cette pièce</a><small>Le paiement en ligne sera activé dès l’ajout des liens Stripe définitifs.</small></div></aside>
-  <script src="assets/js/shop.js?v=20261105" defer></script>
-</body>
+    <aside class="selection-panel" aria-hidden="true" data-selection-panel>
+      <button class="panel-close" type="button" aria-label="Fermer" data-panel-close>×</button>
+      <p class="eyebrow" data-selection-title>Votre sélection</p>
+      <div class="selection-content" data-selection-content></div>
+      <a class="button button-dark" href="mailto:ouestgems.export@gmail.com">Contacter la Maison</a>
+    </aside>
+
+    <script src="assets/js/orbit-home.js?v=20261111" defer></script>
+  </body>
 </html>
