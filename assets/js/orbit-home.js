@@ -3,7 +3,8 @@ const productData = {
   "collier-cage": { name: "Collier Cage spirale", category: "Collier", price: "320 €", image: "assets/produits/cage.jpg", description: "Une ligne organique en or enlace l’émeraude et en révèle les nuances profondes." },
   "pendentif-file": { name: "Pendentif Émeraude filée", category: "Pendentif", price: "410 €", image: "assets/produits/goutte.jpg", description: "Une construction aérienne, dessinée comme un fil continu autour d’une émeraude naturelle." },
   "bague-branche": { name: "Bague Branche", category: "Bague", price: "540 €", image: "assets/produits/branche.jpg", description: "Une monture organique et texturée qui semble avoir poussé autour de la pierre." },
-  "bague-griffes": { name: "Bague Griffes", category: "Bague", price: "380 €", image: "assets/produits/griffes.jpg", description: "Une bague franche et contemporaine, centrée sur la profondeur d’une émeraude rectangulaire." }
+  "bague-griffes": { name: "Bague Griffes", category: "Bague", price: "380 €", image: "assets/produits/griffes.jpg", description: "Une bague franche et contemporaine, centrée sur la profondeur d’une émeraude rectangulaire." },
+  "creation-sur-mesure": { name: "Création sur mesure", category: "Pièce singulière", price: "Sur demande", image: "assets/img/jewelry-hand-emerald-hero.png", description: "Une création imaginée autour de votre émeraude et de votre histoire, accompagnée par la Maison." }
 };
 
 const state = { cart: [], favorites: new Set() };
@@ -46,7 +47,7 @@ function openProduct(id) {
   dialog.showModal();
 }
 
-$$('[data-product]').forEach((card) => {
+$$('.product-card[data-product]').forEach((card) => {
   $('.card-image', card).addEventListener('click', () => openProduct(card.dataset.product));
   $('.favorite', card).addEventListener('click', (event) => {
     const id = card.dataset.product;
@@ -59,13 +60,24 @@ $$('[data-product]').forEach((card) => {
 
 $('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
-$('[data-add-cart]').addEventListener('click', () => {
-  const id = dialog.dataset.activeProduct;
+function addToCart(id, showSelection = true) {
+  if (!productData[id]) return;
   if (!state.cart.includes(id)) state.cart.push(id);
   $$('[data-cart-count]').forEach((node) => node.textContent = state.cart.length);
+  if (showSelection) {
+    renderSelection('Votre sélection', state.cart);
+    openPanel(selectionPanel);
+  }
+}
+
+$('[data-add-cart]').addEventListener('click', () => {
+  const id = dialog.dataset.activeProduct;
   dialog.close();
-  renderSelection('Votre sélection', state.cart);
-  openPanel(selectionPanel);
+  addToCart(id);
+});
+
+$$('[data-orbit-add]').forEach((button) => {
+  button.addEventListener('click', () => addToCart(button.dataset.product));
 });
 
 function renderSelection(title, ids) {
@@ -127,21 +139,11 @@ function updateStory() {
   }
 }
 
-const floatingJewels = $$('[data-float]');
-function updateFloat() {
-  const match = $('.match').getBoundingClientRect();
-  floatingJewels.forEach((jewel) => {
-    const amount = Number(jewel.dataset.float);
-    const offset = (innerHeight - match.top) * amount;
-    jewel.style.translate = `0 ${offset}px`;
-  });
-}
-
 let ticking = false;
 addEventListener('scroll', () => {
   if (ticking) return;
   ticking = true;
-  requestAnimationFrame(() => { updateStory(); updateFloat(); ticking = false; });
+  requestAnimationFrame(() => { updateStory(); ticking = false; });
 }, { passive: true });
 addEventListener('resize', updateStory);
 updateStory();
