@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/orbit-home.css?v=20261111" />
+    <link rel="stylesheet" href="assets/css/orbit-home.css?v=20261111-2" />
     <title>Ouest Gems — Maison française</title>
   </head>
   <body>
@@ -119,45 +119,63 @@
         <div class="torn-edge" aria-hidden="true"></div>
       </section>
 
-      <section class="match light-section" aria-labelledby="match-title">
-        <div class="match-title-wrap">
-          <p class="eyebrow">Une pierre. Une présence.</p>
-          <h2 id="match-title">Trouvez votre<br />pièce <em class="marker">singulière</em></h2>
+      <section class="style-orbit light-section" id="style" aria-labelledby="style-title">
+        <div class="orbit-stage">
+          <div class="orbit-line" aria-hidden="true"></div>
+          <div class="orbit-center">
+            <p class="eyebrow">Six signatures · Une seule pierre</p>
+            <h2 id="style-title">Trouve ton<br /><em class="marker">style</em></h2>
+            <p>Choisis la pièce qui te ressemble. Un clic suffit pour l’ajouter à ta sélection.</p>
+          </div>
+          <div class="orbit-rotator" role="list" aria-label="Les créations Ouest Gems">
+            <button class="orbit-jewel" style="--angle: 0deg; --counter: 0deg" type="button" role="listitem" data-orbit-add data-product="pendentif-main" aria-label="Ajouter le Pendentif Main d’émeraude à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(01)</span><img src="assets/produits/main.jpg" alt="" /><span class="orbit-meta"><strong>Main d’émeraude</strong><small>Ajouter +</small></span></span>
+            </button>
+            <button class="orbit-jewel" style="--angle: 60deg; --counter: -60deg" type="button" role="listitem" data-orbit-add data-product="collier-cage" aria-label="Ajouter le Collier Cage spirale à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(02)</span><img src="assets/produits/cage.jpg" alt="" /><span class="orbit-meta"><strong>Cage spirale</strong><small>Ajouter +</small></span></span>
+            </button>
+            <button class="orbit-jewel" style="--angle: 120deg; --counter: -120deg" type="button" role="listitem" data-orbit-add data-product="pendentif-file" aria-label="Ajouter le Pendentif Émeraude filée à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(03)</span><img src="assets/produits/goutte.jpg" alt="" /><span class="orbit-meta"><strong>Émeraude filée</strong><small>Ajouter +</small></span></span>
+            </button>
+            <button class="orbit-jewel" style="--angle: 180deg; --counter: -180deg" type="button" role="listitem" data-orbit-add data-product="bague-branche" aria-label="Ajouter la Bague Branche à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(04)</span><img src="assets/produits/branche.jpg" alt="" /><span class="orbit-meta"><strong>Bague Branche</strong><small>Ajouter +</small></span></span>
+            </button>
+            <button class="orbit-jewel" style="--angle: 240deg; --counter: -240deg" type="button" role="listitem" data-orbit-add data-product="bague-griffes" aria-label="Ajouter la Bague Griffes à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(05)</span><img src="assets/produits/griffes.jpg" alt="" /><span class="orbit-meta"><strong>Bague Griffes</strong><small>Ajouter +</small></span></span>
+            </button>
+            <button class="orbit-jewel" style="--angle: 300deg; --counter: -300deg" type="button" role="listitem" data-orbit-add data-product="creation-sur-mesure" aria-label="Ajouter une création sur mesure à la sélection">
+              <span class="orbit-jewel-inner"><span class="orbit-number">(06)</span><img src="assets/img/jewelry-hand-emerald-hero.png" alt="" /><span class="orbit-meta"><strong>Sur mesure</strong><small>Ajouter +</small></span></span>
+            </button>
+          </div>
         </div>
-        <figure class="floating-jewel jewel-one" data-float="0.12"><span>(01)</span><img src="assets/produits/branche.jpg" alt="Bague contemporaine sertie d’une émeraude" /></figure>
-        <figure class="floating-jewel jewel-two" data-float="-0.08"><span>(02)</span><img src="assets/produits/goutte.jpg" alt="Pendentif en or et émeraude" /></figure>
-        <figure class="floating-jewel jewel-three" data-float="0.06"><span>(03)</span><img src="assets/produits/griffes.jpg" alt="Bague en or et émeraude rectangulaire" /></figure>
-        <div class="match-copy">
-          <div class="eye" aria-hidden="true">◉</div>
-          <p>Chaque création naît d’une émeraude choisie pour sa couleur et son caractère. De la vallée de Swat jusqu’à votre écrin, chaque pierre est sélectionnée, examinée et accompagnée avec exigence.</p>
-          <a class="inline-link" href="pages/la-maison.html">Découvrir notre démarche <span>↗</span></a>
-        </div>
+        <div class="orbit-footnote"><span>Conçues avec intention.</span><span>Portées avec caractère.</span></div>
       </section>
 
       <section class="maison" id="maison" aria-labelledby="maison-title">
-        <div>
+        <div class="maison-heading">
           <p class="eyebrow">La pierre avant tout</p>
           <h2 id="maison-title">De la source<br /><em>à votre écrin</em></h2>
         </div>
         <p class="maison-intro">Nous connaissons nos pierres avant qu’elles ne deviennent bijoux. Sélection, examen, taille et certification : chaque étape est suivie et documentée.</p>
-        <ol class="steps">
-          <li><span>01</span><h3>Sélection</h3><p>Des émeraudes choisies directement à la source au Pakistan.</p></li>
-          <li><span>02</span><h3>Examen</h3><p>Couleur, pureté, taille et caractère étudiés avec attention.</p></li>
-          <li><span>03</span><h3>Création</h3><p>Des bijoux produits en séries limitées par des ateliers partenaires.</p></li>
-          <li><span>04</span><h3>Transmission</h3><p>Une pièce préparée avec soin et expédiée depuis la France.</p></li>
-        </ol>
+        <div class="process-gallery">
+          <article class="process-card process-featured"><img src="assets/img/terrain-selection.jpg" alt="Sélection des émeraudes dans un atelier partenaire" loading="lazy" /><div><span>01 · À la source</span><h3>Sélection</h3><p>Rencontrer les ateliers et choisir chaque pierre pour sa couleur, son énergie et son caractère.</p></div></article>
+          <article class="process-card process-exam"><img src="assets/img/terrain-examen.jpg" alt="Examen à la loupe d’une émeraude naturelle" loading="lazy" /><div><span>02 · Le regard</span><h3>Examen</h3><p>Observer les inclusions, la pureté et la vie intérieure de l’émeraude.</p></div></article>
+          <article class="process-card process-cut"><img src="assets/img/terrain-taille.jpg" alt="Travail de taille d’une émeraude en atelier" loading="lazy" /><div><span>03 · Le geste</span><h3>Taille</h3><p>Révéler la lumière sans effacer l’identité de la pierre.</p></div></article>
+          <article class="process-card process-jewel"><img src="assets/img/jewelry-hand-emerald-hero.png" alt="Pendentif Main d’émeraude Ouest Gems" loading="lazy" /><div><span>04 · La rencontre</span><h3>Transmission</h3><p>Une création singulière, préparée avec soin pour rejoindre son écrin.</p></div></article>
+        </div>
+        <a class="maison-link" href="pages/la-maison.html">Découvrir toute notre démarche <span>↗</span></a>
       </section>
 
       <section class="newsletter" id="contact">
         <p class="eyebrow">Le Cercle Ouest Gems</p>
         <h2>Entrez dans les coulisses<br /><em>de la Maison.</em></h2>
-        <p>Avant-premières, nouvelles créations et histoires de pierres.</p>
+        <p>Avant-premières, nouvelles créations et promotions.</p>
         <form action="https://formspree.io/f/xwvgavdj" method="post"><label for="email">Votre adresse e-mail</label><div><input id="email" name="email" type="email" required placeholder="vous@exemple.fr" /><button type="submit">S’inscrire ↗</button></div></form>
       </section>
     </main>
 
     <footer>
-      <a class="footer-brand" href="#top">OUEST GEMS</a>
+      <a class="footer-brand" href="#top"><span>OUEST GEMS</span><small>MAISON FRANÇAISE</small></a>
       <p>Émeraudes naturelles et créations singulières.</p>
       <nav><a href="pages/la-maison.html">La Maison</a><a href="collection.html">Les émeraudes</a><a href="pages/cgv.html">Conditions de vente</a><a href="pages/mentions-legales.html">Mentions légales</a></nav>
       <p>Ouest Gems Export SAS · France</p>
@@ -176,6 +194,6 @@
       <a class="button button-dark" href="mailto:ouestgems.export@gmail.com">Contacter la Maison</a>
     </aside>
 
-    <script src="assets/js/orbit-home.js?v=20261111" defer></script>
+    <script src="assets/js/orbit-home.js?v=20261111-2" defer></script>
   </body>
 </html>
